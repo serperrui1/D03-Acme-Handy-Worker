@@ -1,20 +1,24 @@
 
 package domain;
 
+import java.util.Set;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 public class Actor extends DomainEntity {
 
-	private String	name;
-	private String	surname;
-	private String	middleName;
-	private String	photo;
-	private String	email;
-	private String	phone;
-	private String	address;
-//	private Set<Profile> profiles
+	private String				name;
+	private String				surname;
+	private String				middleName;
+	private String				photo;
+	private String				email;
+	private String				phone;
+	private String				address;
+	private Set<Profile>		profile;
+	private Set<MessageFolder>	messageFolder;
+
 
 	@NotBlank
 	public String getName() {
@@ -50,6 +54,22 @@ public class Actor extends DomainEntity {
 
 	public String getAddress() {
 		return this.address;
+	}
+
+	public Set<Profile> getProfile() {
+		return this.profile;
+	}
+
+	public void setProfile(final Set<Profile> profile) {
+		this.profile = profile;
+	}
+
+	public Set<MessageFolder> getMessageFolder() {
+		return this.messageFolder;
+	}
+
+	public void setMessageFolder(final Set<MessageFolder> messageFolder) {
+		this.messageFolder = messageFolder;
 	}
 
 }
