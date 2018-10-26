@@ -19,9 +19,12 @@ public class Category {
 	}
 
 	public void setName(String name) {
-		if (this.root.equals(false))
-			name = "CATEGORY";
+		if (this.root.equals(false)){
+			this.name.toUpperCase();
+		}	
+		else{
 		this.name = name;
+		}
 	}
 
 }

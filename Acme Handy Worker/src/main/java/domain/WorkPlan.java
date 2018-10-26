@@ -15,10 +15,10 @@ public class WorkPlan {
 	}
 
 	public void setTask(final FixUpTask task) {
-		if (this.status.equals(Status.ACCEPTED))
-			this.task = task;
-		else
-			this.task = null;
+		//		if (this.status.equals(Status.ACCEPTED))
+		//			this.task = task;
+		//		else
+		this.task = null;
 	}
 
 	public Set<Phase> getPhases() {

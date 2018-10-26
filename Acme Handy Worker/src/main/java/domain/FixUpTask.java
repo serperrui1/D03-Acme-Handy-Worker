@@ -35,14 +35,14 @@ public class FixUpTask {
 	}
 
 	public void setStartMoment(final Date startMoment) {
-		if (this.getStartMoment().after(this.phase.getStartMoment()))
-			throw new IllegalArgumentException("A phase cannot start before it's fix up task has started already");
+		//		if (this.getStartMoment().after(this.phase.getStartMoment()))
+		//			throw new IllegalArgumentException("A phase cannot start before it's fix up task has started already");
 		this.startMoment = startMoment;
 	}
 
 	public void setEndMoment(final Date endMoment) {
-		if (this.phase.getEndMoment().after(this.getEndMoment()))
-			throw new IllegalArgumentException("A phase cannot finish after it's fix up task is finished");
+		//		if (this.phase.getEndMoment().after(this.getEndMoment()))
+		//			throw new IllegalArgumentException("A phase cannot finish after it's fix up task is finished");
 		this.endMoment = endMoment;
 	}
 	@NotBlank
