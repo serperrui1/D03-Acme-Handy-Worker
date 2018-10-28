@@ -38,4 +38,8 @@ public class MessageFolder extends DomainEntity {
 		this.messages = messages;
 	}
 
+	public void setModifiable(Boolean modifiable) {
+		this.modifiable = modifiable;
+	}
+
 }

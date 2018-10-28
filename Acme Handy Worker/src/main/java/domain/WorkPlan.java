@@ -25,4 +25,16 @@ public class WorkPlan {
 		return this.phases;
 	}
 
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public void setPhases(Set<Phase> phases) {
+		this.phases = phases;
+	}
+
 }

@@ -12,6 +12,15 @@ public class Warranty {
 	private Set<String>	laws;
 
 
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public void setTerms(Set<String> terms) {
+		this.terms = terms;
+	}
+	public void setLaws(Set<String> laws) {
+		this.laws = laws;
+	}
 	@NotBlank
 	public String getTitle() {
 		return this.title;

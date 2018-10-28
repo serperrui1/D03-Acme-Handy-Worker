@@ -3,7 +3,7 @@ package domain;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-public class Category {
+public class Category extends DomainEntity{
 
 	private String	name;
 	private Boolean	root;
@@ -25,6 +25,10 @@ public class Category {
 		else{
 		this.name = name;
 		}
+	}
+
+	public void setRoot(Boolean root) {
+		this.root = root;
 	}
 
 }

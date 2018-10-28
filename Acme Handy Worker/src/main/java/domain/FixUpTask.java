@@ -15,11 +15,47 @@ public class FixUpTask {
 	private Double		maximumPrice;
 	private Category	category;
 	private Phase		phase;
+	private Warranty 	warranty;
+	
+	
 
 
 	@NotBlank
 	public String getTicker() {
 		return this.ticker;
+	}
+	
+
+	public Warranty getWarranty() {
+		return warranty;
+	}
+
+	public void setWarranty(Warranty warranty) {
+		this.warranty = warranty;
+	}
+
+	public void setTicker(String ticker) {
+		this.ticker = ticker;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setAddres(String addres) {
+		this.addres = addres;
+	}
+
+	public void setMaximumPrice(Double maximumPrice) {
+		this.maximumPrice = maximumPrice;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public void setPhase(Phase phase) {
+		this.phase = phase;
 	}
 
 	public Date getStartMoment() {

@@ -1,7 +1,7 @@
 
 package domain;
 
-public enum PriorityEnum {
+public enum Priority {
 	HIGH, NEUTRAL, LOW
 
 }

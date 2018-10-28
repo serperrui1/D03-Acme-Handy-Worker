@@ -72,4 +72,28 @@ public class Actor extends DomainEntity {
 		this.messageFolder = messageFolder;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 }
