@@ -3,11 +3,17 @@ package domain;
 
 import java.util.Set;
 
-public class WorkPlan {
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+
+@Entity
+@Access(AccessType.PROPERTY)
+public class WorkPlan extends DomainEntity{
 
 	private FixUpTask	task;
 	private Set<Phase>	phases;
-	private Status		status;
+	
 
 
 	public FixUpTask getTask() {
@@ -25,13 +31,6 @@ public class WorkPlan {
 		return this.phases;
 	}
 
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
 
 	public void setPhases(Set<Phase> phases) {
 		this.phases = phases;

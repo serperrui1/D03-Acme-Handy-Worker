@@ -2,17 +2,24 @@ package domain;
 
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class EndoserRecord extends DomainEntity{
 	private String fullName;
 	private String email;
 	private String phone;
 	private String linkedIn;
 	private List<String> comments;
-	
+
 	@NotBlank
 	public String getFullName() {
 		return fullName;
@@ -29,6 +36,8 @@ public class EndoserRecord extends DomainEntity{
 		this.email = email;
 	}
 	@NotBlank
+	@Pattern(regexp = "/^([+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[ ][(]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[)][ ][0-9]{4,})|([+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[ ][0-9]{4,})|([0-9]{4,})$/")
+
 	public String getPhone() {
 		return phone;
 	}

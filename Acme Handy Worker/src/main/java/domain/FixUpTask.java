@@ -3,9 +3,15 @@ package domain;
 
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+
 import org.hibernate.validator.constraints.NotBlank;
 
-public class FixUpTask {
+@Entity
+@Access(AccessType.PROPERTY)
+public class FixUpTask extends DomainEntity{
 
 	private String		ticker;
 	private Date		startMoment;

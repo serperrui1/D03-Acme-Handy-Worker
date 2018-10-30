@@ -3,12 +3,17 @@ package domain;
 
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-public class ProfessionalRecord {
+@Entity
+@Access(AccessType.PROPERTY)
+public class ProfessionalRecord extends DomainEntity{
 
 	private String	nameCompany;
 	private Date	startPeriod;
