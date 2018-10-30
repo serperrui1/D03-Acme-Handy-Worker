@@ -5,7 +5,10 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,26 +22,20 @@ public class FixUpTask extends DomainEntity{
 	private String		description;
 	private String		addres;
 	private Double		maximumPrice;
-	private Category	category;
-	private Phase		phase;
-	private Warranty 	warranty;
+//	private Category	category;
+//	private Phase		phase;
+//	private Warranty 	warranty;
 	
 	
 
 
 	@NotBlank
+	@Column(unique = true)
+	@Pattern(regexp = "^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9] {6}$")
 	public String getTicker() {
 		return this.ticker;
 	}
 	
-
-	public Warranty getWarranty() {
-		return warranty;
-	}
-
-	public void setWarranty(Warranty warranty) {
-		this.warranty = warranty;
-	}
 
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
@@ -56,14 +53,7 @@ public class FixUpTask extends DomainEntity{
 		this.maximumPrice = maximumPrice;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
-	public void setPhase(Phase phase) {
-		this.phase = phase;
-	}
-
+	@Past
 	public Date getStartMoment() {
 		return this.startMoment;
 	}
@@ -91,17 +81,9 @@ public class FixUpTask extends DomainEntity{
 	public String getAddres() {
 		return this.addres;
 	}
-
 	public Double getMaximumPrice() {
 		return this.maximumPrice;
 	}
 
-	public Category getCategory() {
-		return this.category;
-	}
-
-	public Phase getPhase() {
-		return this.phase;
-	}
 
 }

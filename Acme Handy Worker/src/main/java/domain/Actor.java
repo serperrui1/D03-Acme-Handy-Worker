@@ -1,7 +1,6 @@
 
 package domain;
 
-import java.util.Set;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -21,8 +20,8 @@ public class Actor extends DomainEntity {
 	private String				email;
 	private String				phone;
 	private String				address;
-	private Set<Profile>		profile;
-	private Set<MessageFolder>	messageFolder;
+//	private Set<Profile>		profile;
+//	private Set<MessageFolder>	messageFolder;
 
 
 	@NotBlank
@@ -53,6 +52,7 @@ public class Actor extends DomainEntity {
 		return this.email;
 	}
 
+	@NotBlank
 	public String getPhone() {
 		return this.phone;
 	}
@@ -61,21 +61,7 @@ public class Actor extends DomainEntity {
 		return this.address;
 	}
 
-	public Set<Profile> getProfile() {
-		return this.profile;
-	}
-
-	public void setProfile(final Set<Profile> profile) {
-		this.profile = profile;
-	}
-
-	public Set<MessageFolder> getMessageFolder() {
-		return this.messageFolder;
-	}
-
-	public void setMessageFolder(final Set<MessageFolder> messageFolder) {
-		this.messageFolder = messageFolder;
-	}
+	
 
 	public void setName(String name) {
 		this.name = name;

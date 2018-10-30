@@ -1,7 +1,6 @@
 
 package domain;
 
-import java.util.Set;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -14,7 +13,7 @@ public class MessageFolder extends DomainEntity {
 
 	private String			name;
 	private Boolean			modifiable;
-	private Set<Message>	messages;
+	//private Set<Message>	messages;
 
 
 	@NotBlank
@@ -31,13 +30,6 @@ public class MessageFolder extends DomainEntity {
 		return this.modifiable;
 	}
 
-	public Set<Message> getMessages() {
-		return this.messages;
-	}
-
-	public void setMessages(final Set<Message> messages) {
-		this.messages = messages;
-	}
 
 	public void setModifiable(Boolean modifiable) {
 		this.modifiable = modifiable;
