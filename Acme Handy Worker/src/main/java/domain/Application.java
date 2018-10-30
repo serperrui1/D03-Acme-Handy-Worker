@@ -3,12 +3,13 @@ package domain;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
+
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -20,13 +21,13 @@ public class Application extends DomainEntity{
 	private String		    status;
 	private Double			price;
 	private List<String>	comments;
-	private Set<FixUpTask>  tasks;
+	//private Set<FixUpTask>  tasks;
 
 	@Past
 	public Date getMoment() {
 		return this.moment;
 	}
-
+	@Pattern(regexp ="^(PENDING|ACEPTED|REJECTED)$")
 	public String getStatus() {
 		return this.status;
 	}
@@ -55,13 +56,5 @@ public class Application extends DomainEntity{
 		this.comments = comments;
 	}
 
-	public Set<FixUpTask> getTasks() {
-		return tasks;
-	}
-
-	public void setTasks(Set<FixUpTask> tasks) {
-		this.tasks = tasks;
-	}
-	
 
 }

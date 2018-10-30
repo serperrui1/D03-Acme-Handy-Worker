@@ -24,8 +24,8 @@ public class Message extends DomainEntity {
 	private String			body;
 	private String 		 	priority;
 	private Set<String>		tags;
-	private Actor 			sender;
-	private Actor 			recipient;
+//	private Actor 			sender;
+//	private Actor 			recipient;
 
 
 	@Past
@@ -42,21 +42,6 @@ public class Message extends DomainEntity {
 	@NotBlank
 	public String getBody() {
 		return this.body;
-	}
-	public Actor getSender() {
-		return sender;
-	}
-
-	public void setSender(Actor sender) {
-		this.sender = sender;
-	}
-
-	public Actor getRecipient() {
-		return recipient;
-	}
-
-	public void setRecipient(Actor recipient) {
-		this.recipient = recipient;
 	}
 
 	@NotBlank 

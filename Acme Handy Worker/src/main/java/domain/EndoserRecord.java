@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.validation.constraints.Pattern;
+
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -36,8 +36,6 @@ public class EndoserRecord extends DomainEntity{
 		this.email = email;
 	}
 	@NotBlank
-	@Pattern(regexp = "/^([+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[ ][(]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[)][ ][0-9]{4,})|([+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])[ ][0-9]{4,})|([0-9]{4,})$/")
-
 	public String getPhone() {
 		return phone;
 	}
