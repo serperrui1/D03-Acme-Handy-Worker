@@ -3,8 +3,13 @@ package domain;
 
 import java.util.Set;
 
-import org.hibernate.validator.constraints.NotBlank;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 
+import org.hibernate.validator.constraints.NotBlank;
+@Entity
+@Access(AccessType.PROPERTY)
 public class MessageFolder extends DomainEntity {
 
 	private String			name;
@@ -23,10 +28,6 @@ public class MessageFolder extends DomainEntity {
 
 	}
 	public Boolean getModifiable() {
-		if (this.name.equals(DefaultFolders.INBOX) || this.name.equals(DefaultFolders.OUTBOX) || this.name.equals(DefaultFolders.SPAMBOX) || this.name.equals(DefaultFolders.TRASHBOX))
-			this.modifiable = false;
-		else
-			this.modifiable = true;
 		return this.modifiable;
 	}
 

@@ -3,9 +3,16 @@ package domain;
 
 import java.util.Set;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Curriculum extends DomainEntity {
 
 	private String					ticker;
@@ -21,6 +28,7 @@ public class Curriculum extends DomainEntity {
 	}
 	
 	@NotBlank
+	@Column(unique = true)
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 	}

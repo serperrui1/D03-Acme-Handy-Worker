@@ -1,24 +1,27 @@
 
 package domain;
 
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class HandyWorker extends Actor{
 
 	public String		makeName;
-	public FixUpTask	task;
 	public Double 		score;
 	private WorkPlan 	workplan;
 	private Curriculum curriculum;
+	private Application application;
 
 
 	@NotBlank
 	public String getMakeName() {
 		return this.makeName;
-	}
-
-	public FixUpTask getTask() {
-		return this.task;
 	}
 
 	public Double getScore() {
@@ -49,8 +52,12 @@ public class HandyWorker extends Actor{
 		this.makeName = makeName;
 	}
 
-	public void setTask(FixUpTask task) {
-		this.task = task;
+	public Application getApplication() {
+		return application;
+	}
+
+	public void setApplication(Application application) {
+		this.application = application;
 	}
 
 }

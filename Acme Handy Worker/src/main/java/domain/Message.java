@@ -4,19 +4,25 @@ package domain;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Message extends DomainEntity {
 
 	private Date			moment;
 	private String			subject;
 	private String			body;
-	private Priority		priority;
+	private String 		 	priority;
 	private Set<String>		tags;
 	private Actor 			sender;
 	private Actor 			recipient;
@@ -53,8 +59,9 @@ public class Message extends DomainEntity {
 		this.recipient = recipient;
 	}
 
-	@NotBlank // no se si hace falta esto
-	public Priority getPriority() {
+	@NotBlank 
+	@Pattern(regexp ="^(HIGH|NEUTRAL|LOW)$")
+	public String getPriority() {
 		return this.priority;
 	}
 
@@ -74,7 +81,7 @@ public class Message extends DomainEntity {
 		this.body = body;
 	}
 
-	public void setPriority(Priority priority) {
+	public void setPriority(String priority) {
 		this.priority = priority;
 	}
 
