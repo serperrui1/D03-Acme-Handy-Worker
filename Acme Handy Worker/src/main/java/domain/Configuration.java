@@ -76,7 +76,7 @@ public class Configuration extends DomainEntity{
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
 	}
-	@Pattern(regexp= "^[+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])$") 
+	@Pattern(regexp= "/^[+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])$/") 
 	public String getDefaultCountryCode() {
 		return defaultCountryCode;
 	}

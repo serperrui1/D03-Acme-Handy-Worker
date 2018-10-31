@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Set;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
