@@ -1,7 +1,4 @@
-
 package domain;
-
-
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;

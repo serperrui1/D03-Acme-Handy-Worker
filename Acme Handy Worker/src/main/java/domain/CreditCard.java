@@ -5,11 +5,11 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
-
 
 @Embeddable
 @Access(AccessType.PROPERTY)
@@ -36,6 +36,7 @@ public class CreditCard {
 		this.brandName = brandName;
 	}
 	@CreditCardNumber
+	@Pattern(regexp="/^[0-9](16}$/")
 	public Integer getNumber() {
 		return number;
 	}

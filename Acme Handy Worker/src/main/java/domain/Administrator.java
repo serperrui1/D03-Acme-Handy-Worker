@@ -6,6 +6,6 @@ import javax.persistence.Entity;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Referee extends Actor {
+public class Administrator extends Actor {
 
 }

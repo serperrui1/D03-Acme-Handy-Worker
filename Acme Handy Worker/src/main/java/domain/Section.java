@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.List;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -15,7 +17,7 @@ public class Section extends DomainEntity {
 	private Integer id;
 	private String title;
 	private String text;
-	private String picture;
+	private List<String> picture;
 	
 	
 	@Column(unique = true)
@@ -40,10 +42,10 @@ public class Section extends DomainEntity {
 		this.text = text;
 	}
 	@URL
-	public String getPicture() {
+	public List<String> getPicture() {
 		return picture;
 	}
-	public void setPicture(String picture) {
+	public void setPicture(List<String> picture) {
 		this.picture = picture;
 	}
 

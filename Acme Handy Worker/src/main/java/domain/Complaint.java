@@ -14,11 +14,11 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Complaint extends DomainEntity{
-	//+ ticker : String {NotBlank, Unique,Pattern(^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9] {6}$)}
+
 	private String ticker;
 	private Date moment;
 	private String description;
-	private Integer attachments;
+	//private Integer attachments;
 	
 	@NotBlank
 	@Pattern(regexp ="^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9] {6}$")
@@ -43,12 +43,11 @@ public class Complaint extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Integer getAttachments() {
+	/* public Integer getAttachments() {
 		return attachments;
 	}
 	public void setAttachments(Integer attachments) {
-		this.attachments = attachments;
-	}
-	
-	
+		this.attachments = attachments; 
+	}*/
+
 }

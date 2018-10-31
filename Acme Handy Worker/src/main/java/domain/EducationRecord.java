@@ -1,7 +1,7 @@
-
 package domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -14,10 +14,10 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class EducationRecord extends DomainEntity {
 
-	private Date	endStudy;
-	private String	institution;
-	private String	link;
-	private String	comments;
+	private Date			endStudy;
+	private String			institution;
+	private String			link;
+	private List<String>	comments;
 
 
 	public Date getEndStudy() {
@@ -44,11 +44,11 @@ public class EducationRecord extends DomainEntity {
 		this.link = link;
 	}
 
-	public String getComments() {
-		return this.comments;
+	public List<String> getComments() {
+		return comments;
 	}
 
-	public void setComments(final String comments) {
+	public void setComments(List<String> comments) {
 		this.comments = comments;
 	}
 

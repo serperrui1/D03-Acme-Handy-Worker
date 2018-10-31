@@ -1,4 +1,3 @@
-
 package domain;
 
 import javax.persistence.Access;
@@ -9,7 +8,6 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-
 public class Category extends DomainEntity{
 
 	private String	name;

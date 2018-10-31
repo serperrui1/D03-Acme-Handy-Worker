@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
@@ -18,7 +16,7 @@ public class EndoserRecord extends DomainEntity{
 	private String email;
 	private String phone;
 	private String linkedIn;
-	private List<String> comments;
+	private String comments;
 
 	@NotBlank
 	public String getFullName() {
@@ -50,10 +48,10 @@ public class EndoserRecord extends DomainEntity{
 	public void setLinkedIn(String linkedIn) {
 		this.linkedIn = linkedIn;
 	}
-	public List<String> getComments() {
+	public String getComments() {
 		return comments;
 	}
-	public void setComments(List<String> comments) {
+	public void setComments(String comments) {
 		this.comments = comments;
 	}
 
