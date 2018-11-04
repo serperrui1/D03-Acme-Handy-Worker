@@ -63,4 +63,6 @@ public class PersonalRecord extends DomainEntity {
 		this.linkedIn = linkedIn;
 	}
 
+	// Relationships ----------------------------------------------------------
+	
 }
