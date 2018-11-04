@@ -6,8 +6,11 @@ import java.util.Set;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -23,8 +26,7 @@ public class Message extends DomainEntity {
 	private String			body;
 	private String 		 	priority;
 	private Set<String>		tags;
-//	private Actor 			sender;
-//	private Actor 			recipient;
+
 
 
 	@Past
@@ -71,6 +73,41 @@ public class Message extends DomainEntity {
 
 	public void setTags(Set<String> tags) {
 		this.tags = tags;
+	}
+	// Relationships ----------------------------------------------------------
+	private Actor			sender;
+	private Actor			recipient;
+	private MessageFolder	messageFolder;
+
+
+	@Valid
+	@NotNull
+	@ManyToOne
+	public Actor getSender() {
+		return this.sender;
+	}
+	public void setSender(Actor sender) {
+		this.sender = sender;
+	}
+
+	@Valid
+	@NotNull
+	@ManyToOne
+	public Actor getRecipient() {
+		return this.recipient;
+	}
+	public void setRecipient(Actor recipient) {
+		this.recipient = recipient;
+	}
+
+	@Valid
+	@NotNull
+	@ManyToOne
+	public MessageFolder getMessageFolder() {
+		return this.messageFolder;
+	}
+	public void setMessageFolder(MessageFolder messageFolder) {
+		this.messageFolder = messageFolder;
 	}
 
 }

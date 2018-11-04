@@ -20,50 +20,58 @@ public class CreditCard {
 	private Date expirationMonth;
 	private Date expirationYeat;
 	private Integer cvv;
-	
+
 	@NotBlank
 	public String getHolderName() {
 		return holderName;
 	}
+
 	public void setHolderName(String holderName) {
 		this.holderName = holderName;
 	}
+
 	@NotBlank
 	public String getBrandName() {
 		return brandName;
 	}
+
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
 	}
+
 	@CreditCardNumber
-	@Pattern(regexp="/^[0-9](16}$/")
+	@Pattern(regexp = "/^[0-9](16}$/")
 	public Integer getNumber() {
 		return number;
 	}
+
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
+
 	public Date getExpirationMonth() {
 		return expirationMonth;
 	}
+
 	public void setExpirationMonth(Date expirationMonth) {
 		this.expirationMonth = expirationMonth;
 	}
+
 	public Date getExpirationYeat() {
 		return expirationYeat;
 	}
+
 	public void setExpirationYeat(Date expirationYeat) {
 		this.expirationYeat = expirationYeat;
 	}
-	@Range(min=100,max=999)
+
+	@Range(min = 100, max = 999)
 	public Integer getCvv() {
 		return cvv;
 	}
+
 	public void setCvv(Integer cvv) {
 		this.cvv = cvv;
 	}
 
-	
-	
-	
 }
