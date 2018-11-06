@@ -7,6 +7,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -15,7 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class HandyWorker extends Actor {
 
 	private String makeName;
-	
+
 	@NotBlank
 	public String getMakeName() {
 		return this.makeName;
@@ -24,9 +25,12 @@ public class HandyWorker extends Actor {
 	public void setMakeName(String makeName) {
 		this.makeName = makeName;
 	}
+
 	// Relationships ----------------------------------------------------------
 	private Collection<Tutorial> tutorials;
-	
+	private Collection<Endorsement> sentEndorsements;
+	private Collection<Endorsement> receivedEndorsements;
+
 	@Valid
 	@OneToMany
 	public Collection<Tutorial> getTutorials() {
@@ -35,5 +39,28 @@ public class HandyWorker extends Actor {
 
 	public void setTutorials(Collection<Tutorial> tutorial) {
 		this.tutorials = tutorial;
+	}
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "sender")
+	public Collection<Endorsement> getSentEndorsements() {
+		return this.sentEndorsements;
+	}
+
+	public void setSentEndorsements(Collection<Endorsement> sentEndorsements) {
+		this.sentEndorsements = sentEndorsements;
+	}
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "recipient")
+	public Collection<Endorsement> getReceivedEndorsements() {
+		return this.receivedEndorsements;
+	}
+
+	public void setReceivedEndorsements(
+			Collection<Endorsement> receivedEndorsements) {
+		this.receivedEndorsements = receivedEndorsements;
 	}
 }
