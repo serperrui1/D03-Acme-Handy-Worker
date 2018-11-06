@@ -1,15 +1,24 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class MessageFolder extends DomainEntity {
 
-	private String			name;
-	private Boolean			modifiable;
-	private Set<Message>	messages;
+	private String	name;
+	private Boolean	modifiable;
 
 
 	@NotBlank
@@ -22,20 +31,41 @@ public class MessageFolder extends DomainEntity {
 			this.name = name;
 
 	}
+
 	public Boolean getModifiable() {
-		if (this.name.equals(DefaultFolders.INBOX) || this.name.equals(DefaultFolders.OUTBOX) || this.name.equals(DefaultFolders.SPAMBOX) || this.name.equals(DefaultFolders.TRASHBOX))
-			this.modifiable = false;
-		else
-			this.modifiable = true;
 		return this.modifiable;
 	}
 
-	public Set<Message> getMessages() {
+	public void setModifiable(final Boolean modifiable) {
+		this.modifiable = modifiable;
+	}
+
+
+	// Relationships ----------------------------------------------------------
+	private Collection<Message>	messages;
+	private Actor				actor;
+
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "messageFolder")
+	public Collection<Message> getMessages() {
 		return this.messages;
 	}
 
-	public void setMessages(final Set<Message> messages) {
+	public void setMessages(final Collection<Message> messages) {
 		this.messages = messages;
+	}
+
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
+	public Actor getActor() {
+		return this.actor;
+	}
+
+	public void setActor(final Actor actor) {
+		this.actor = actor;
 	}
 
 }
