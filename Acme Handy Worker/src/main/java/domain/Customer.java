@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Customer extends Actor {
+public class Customer extends Endorser {
 
 	private Double	score;
 

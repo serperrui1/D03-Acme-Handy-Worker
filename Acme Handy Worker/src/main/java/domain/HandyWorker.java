@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -12,28 +13,32 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class HandyWorker extends Actor {
+public class HandyWorker extends Endorser {
 
-	private String makeName;
-	
+	private String	makeName;
+
+
 	@NotBlank
 	public String getMakeName() {
 		return this.makeName;
 	}
 
-	public void setMakeName(String makeName) {
+	public void setMakeName(final String makeName) {
 		this.makeName = makeName;
 	}
+
+
 	// Relationships ----------------------------------------------------------
-	private Collection<Tutorial> tutorials;
-	
+	private Collection<Tutorial>	tutorials;
+
+
 	@Valid
 	@OneToMany
 	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
 
-	public void setTutorials(Collection<Tutorial> tutorial) {
+	public void setTutorials(final Collection<Tutorial> tutorial) {
 		this.tutorials = tutorial;
 	}
 }
