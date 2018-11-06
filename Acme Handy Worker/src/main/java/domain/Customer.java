@@ -40,6 +40,7 @@ public class Customer extends Actor {
 
 	private FixUpTask				fixUpTask;
 
+<<<<<<< HEAD
 
 	@OneToMany(mappedBy = "customer")
 	public FixUpTask getFixUpTask() {
@@ -48,6 +49,20 @@ public class Customer extends Actor {
 
 	public void setFixUpTask(final FixUpTask fixUpTask) {
 		this.fixUpTask = fixUpTask;
+=======
+	public void setComplaints(Collection<Complaint> complaints) {
+		this.complaints = complaints;
+	}
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "sender")
+	public Collection<Endorsement> getSentEndorsements() {
+		return this.sentEndorsements;
+	}
+
+	public void setSentEndorsements(Collection<Endorsement> sentEndorsements) {
+		this.sentEndorsements = sentEndorsements;
+>>>>>>> Dani
 	}
 
 	@Valid
@@ -56,8 +71,13 @@ public class Customer extends Actor {
 		return this.complaints;
 	}
 
+<<<<<<< HEAD
 	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
+=======
+	public void setReceivedEndorsements(Collection<Endorsement> receivedEndorsements) {
+		this.receivedEndorsements = receivedEndorsements;
+>>>>>>> Dani
 	}
 	/*
 	 * @Valid
