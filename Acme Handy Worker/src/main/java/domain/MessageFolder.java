@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -16,8 +17,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class MessageFolder extends DomainEntity {
 
-	private String name;
-	private Boolean modifiable;
+	private String	name;
+	private Boolean	modifiable;
+
 
 	@NotBlank
 	public String getName() {
@@ -34,13 +36,15 @@ public class MessageFolder extends DomainEntity {
 		return this.modifiable;
 	}
 
-	public void setModifiable(Boolean modifiable) {
+	public void setModifiable(final Boolean modifiable) {
 		this.modifiable = modifiable;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Collection<Message> messages;
-	private Actor actor;
+	private Collection<Message>	messages;
+	private Actor				actor;
+
 
 	@Valid
 	@NotNull
@@ -49,18 +53,18 @@ public class MessageFolder extends DomainEntity {
 		return this.messages;
 	}
 
-	public void setMessages(Collection<Message> messages) {
+	public void setMessages(final Collection<Message> messages) {
 		this.messages = messages;
 	}
 
 	@Valid
 	@NotNull
-	@ManyToOne
+	@ManyToOne(optional = false)
 	public Actor getActor() {
 		return this.actor;
 	}
 
-	public void setActor(Actor actor) {
+	public void setActor(final Actor actor) {
 		this.actor = actor;
 	}
 

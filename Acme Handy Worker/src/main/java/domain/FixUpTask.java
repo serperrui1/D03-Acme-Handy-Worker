@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -7,7 +8,10 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -18,12 +22,13 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class FixUpTask extends DomainEntity {
 
-	private String ticker;
-	private Date startMoment;
-	private Date endMoment;
-	private String description;
-	private String addres;
-	private Double maximumPrice;
+	private String	ticker;
+	private Date	startMoment;
+	private Date	endMoment;
+	private String	description;
+	private String	addres;
+	private Double	maximumPrice;
+
 
 	@NotBlank
 	@Column(unique = true)
@@ -32,19 +37,19 @@ public class FixUpTask extends DomainEntity {
 		return this.ticker;
 	}
 
-	public void setTicker(String ticker) {
+	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
-	public void setAddres(String addres) {
+	public void setAddres(final String addres) {
 		this.addres = addres;
 	}
 
-	public void setMaximumPrice(Double maximumPrice) {
+	public void setMaximumPrice(final Double maximumPrice) {
 		this.maximumPrice = maximumPrice;
 	}
 
@@ -85,16 +90,79 @@ public class FixUpTask extends DomainEntity {
 		return this.maximumPrice;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Collection<Complaint> complaints;
+	private Collection<Complaint>	complaints;
+	private Warranty				warranty;
+	private Customer				customer;
+	private WorkPlan				workPlan;
+	private Category				category;
+	private Finder					finder;
+	private Application				application;
+
 
 	@Valid
-	@OneToMany()
+	@OneToMany
 	public Collection<Complaint> getComplaints() {
 		return this.complaints;
 	}
 
-	public void setComplaints(Collection<Complaint> complaints) {
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
 	}
+
+	@ManyToOne(optional = false)
+	public Category getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(final Category category) {
+		this.category = category;
+	}
+
+	@ManyToMany
+	public Finder getFinder() {
+		return this.finder;
+	}
+
+	public void setFinder(final Finder finder) {
+		this.finder = finder;
+	}
+
+	@OneToOne(optional = false)
+	public Application getApplication() {
+		return this.application;
+	}
+
+	public void setApplication(final Application application) {
+		this.application = application;
+	}
+
+	@OneToOne(optional = false)
+	public WorkPlan getWorkPlan() {
+		return this.workPlan;
+	}
+
+	public void setWorkPlan(final WorkPlan workPlan) {
+		this.workPlan = workPlan;
+	}
+
+	@OneToOne(optional = false)
+	public Warranty getWarranty() {
+		return this.warranty;
+	}
+
+	public void setWarranty(final Warranty warranty) {
+		this.warranty = warranty;
+	}
+
+	@ManyToOne
+	public Customer getCustomer() {
+		return this.customer;
+	}
+
+	public void setCustomer(final Customer customer) {
+		this.customer = customer;
+	}
+
 }

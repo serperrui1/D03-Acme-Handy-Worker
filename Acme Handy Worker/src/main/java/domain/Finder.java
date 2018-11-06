@@ -1,66 +1,98 @@
+
 package domain;
 
 import java.util.Date;
-import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Finder extends DomainEntity {
-	
-	private Collection<String> keyword;
-	private Collection<String> category;
-	private Collection<String> warranty;
-	private Collection<Double> minPrice;
-	private Collection<Double> maxPrice;
-	private Collection<Date> minDate;
-	private Collection<Date> maxDate;
-	
-	
-	public Collection<String> getKeyword() {
-		return keyword;
+
+	private String	keyword;
+	private Double	minPrice;
+	private Double	maxPrice;
+	private Date	minDate;
+	private Date	maxDate;
+
+
+	public String getKeyword() {
+		return this.keyword;
 	}
-	public void setKeyword(Collection<String> keyword) {
+	public void setKeyword(final String keyword) {
 		this.keyword = keyword;
 	}
-	public Collection<String> getCategory() {
-		return category;
+	public Double getMinPrice() {
+		return this.minPrice;
 	}
-	public void setCategory(Collection<String> category) {
-		this.category = category;
-	}
-	public Collection<String> getWarranty() {
-		return warranty;
-	}
-	public void setWarranty(Collection<String> warranty) {
-		this.warranty = warranty;
-	}
-	public Collection<Double> getMinPrice() {
-		return minPrice;
-	}
-	public void setMinPrice(Collection<Double> minPrice) {
+	public void setMinPrice(final Double minPrice) {
 		this.minPrice = minPrice;
 	}
-	public Collection<Double> getMaxPrice() {
-		return maxPrice;
+	public Double getMaxPrice() {
+		return this.maxPrice;
 	}
-	public void setMaxPrice(Collection<Double> maxPrice) {
+	public void setMaxPrice(final Double maxPrice) {
 		this.maxPrice = maxPrice;
 	}
-	public Collection<Date> getMinDate() {
-		return minDate;
+
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	public Date getMinDate() {
+		return this.minDate;
 	}
-	public void setMinDate(Collection<Date> minDate) {
+	public void setMinDate(final Date minDate) {
 		this.minDate = minDate;
 	}
-	public Collection<Date> getMaxDate() {
-		return maxDate;
+
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	public Date getMaxDate() {
+		return this.maxDate;
 	}
-	public void setMaxDate(Collection<Date> maxDate) {
+	public void setMaxDate(final Date maxDate) {
 		this.maxDate = maxDate;
+	}
+
+
+	//Relationships
+
+	private Warranty	warranty;
+	private Category	category;
+	private FixUpTask	fixUpTask;
+
+
+	@OneToOne(optional = true)
+	public Warranty getWarranty() {
+		return this.warranty;
+	}
+
+	public void setWarranty(final Warranty warranty) {
+		this.warranty = warranty;
+	}
+
+	@OneToOne(optional = true)
+	public Category getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(final Category category) {
+		this.category = category;
+	}
+
+	@ManyToMany
+	public FixUpTask getFixUpTask() {
+		return this.fixUpTask;
+	}
+	public void setFixUpTask(final FixUpTask fixUpTask) {
+		this.fixUpTask = fixUpTask;
 	}
 
 }

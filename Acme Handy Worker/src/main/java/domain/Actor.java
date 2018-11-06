@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -16,13 +17,14 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Actor extends DomainEntity {
 
-	private String name;
-	private String surname;
-	private String middleName;
-	private String photo;
-	private String email;
-	private String phone;
-	private String address;
+	private String	name;
+	private String	surname;
+	private String	middleName;
+	private String	photo;
+	private String	email;
+	private String	phone;
+	private String	address;
+
 
 	@NotBlank
 	public String getName() {
@@ -61,34 +63,37 @@ public class Actor extends DomainEntity {
 		return this.address;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
-	public void setMiddleName(String middleName) {
+	public void setMiddleName(final String middleName) {
 		this.middleName = middleName;
 	}
 
-	public void setPhoto(String photo) {
+	public void setPhoto(final String photo) {
 		this.photo = photo;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(final String phone) {
 		this.phone = phone;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(final String address) {
 		this.address = address;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Collection<Message> sentMessages;
-	private Collection<Message> receivedMessages;
+	private Collection<Message>			sentMessages;
+	private Collection<Message>			receivedMessages;
 	private Collection<MessageFolder>	messageFolders;
+	private Collection<Profile>			profiles;
+
 
 	@Valid
 	@OneToMany(mappedBy = "sender")
@@ -106,7 +111,7 @@ public class Actor extends DomainEntity {
 		return this.receivedMessages;
 	}
 
-	public void setReceivedMessages(Collection<Message> receivedMessages) {
+	public void setReceivedMessages(final Collection<Message> receivedMessages) {
 		this.receivedMessages = receivedMessages;
 	}
 
@@ -116,8 +121,17 @@ public class Actor extends DomainEntity {
 		return this.messageFolders;
 	}
 
-	public void setMessageFolders(Collection<MessageFolder> messageFolders) {
+	public void setMessageFolders(final Collection<MessageFolder> messageFolders) {
 		this.messageFolders = messageFolders;
+	}
+
+	@OneToMany(mappedBy = "actor")
+	public Collection<Profile> getProfiles() {
+		return this.profiles;
+	}
+
+	public void setProfiles(final Collection<Profile> profiles) {
+		this.profiles = profiles;
 	}
 
 }
