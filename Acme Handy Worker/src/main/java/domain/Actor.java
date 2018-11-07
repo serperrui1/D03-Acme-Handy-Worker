@@ -24,7 +24,7 @@ public class Actor extends DomainEntity {
 	private String	email;
 	private String	phone;
 	private String	address;
-
+//afdsjdfgsd
 
 	@NotBlank
 	public String getName() {

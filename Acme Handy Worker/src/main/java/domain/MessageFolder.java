@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class MessageFolder extends DomainEntity {
 
 	private String	name;
-	private Boolean	modifiable;
+	private boolean	modifiable;
 
 
 	@NotBlank
