@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -7,10 +8,8 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -20,10 +19,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class EducationRecord extends DomainEntity {
 
-	private Date endStudy;
-	private String institution;
-	private String link;
-	private Collection<String> comments;
+	private Date				endStudy;
+	private String				institution;
+	private String				link;
+	private Collection<String>	comments;
+
 
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -55,23 +55,10 @@ public class EducationRecord extends DomainEntity {
 
 	@ElementCollection
 	public Collection<String> getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(Collection<String> comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
-	// Relationships ----------------------------------------------------------
-
-		private Curriculum	curriculum;
-
-
-		@Valid
-		@ManyToOne(optional = false)
-		public Curriculum getCurriculum() {
-			return this.curriculum;
-		}
-		public void setCurriculum(final Curriculum curriculum) {
-			this.curriculum = curriculum;
-		}
 }

@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -8,8 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -18,86 +17,81 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Curriculum extends DomainEntity {
 
-	private String ticker;
+	private String	ticker;
+
 
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9]{6}$")
 	public String getTicker() {
-		return ticker;
+		return this.ticker;
 	}
 
-	public void setTicker(String ticker) {
+	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
 
-	// Relationships ----------------------------------------------------------
-	private HandyWorker handyWorker;
-	private PersonalRecord personalRecord;
-	private Collection<EducationRecord> educationRecords;
-	private Collection<ProfessionalRecord> professionalRecords;
-	private Collection<EndorserRecord> endorserRecords;
-	private Collection<MiscellaneousRecord> miscellaneousRecords;
 
-	@Valid
+	// Relationships ----------------------------------------------------------
+	private HandyWorker						handyWorker;
+	private PersonalRecord					personalRecord;
+	private Collection<EducationRecord>		educationRecords;
+	private Collection<ProfessionalRecord>	professionalRecords;
+	private Collection<EndorserRecord>		endorserRecords;
+	private Collection<MiscellaneousRecord>	miscellaneousRecords;
+
+
 	@OneToOne(optional = false)
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
 
-	public void sethandyWorker(HandyWorker handyWorker) {
+	public void sethandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 
-	@Valid
 	@OneToOne(optional = false)
 	public PersonalRecord getPersonalRecord() {
 		return this.personalRecord;
 	}
 
-	public void setPersonalRecord(PersonalRecord personalRecord) {
+	public void setPersonalRecord(final PersonalRecord personalRecord) {
 		this.personalRecord = personalRecord;
 	}
 
-	@NotNull
-	@OneToMany(mappedBy = "curriculum")
+	@OneToMany()
 	public Collection<ProfessionalRecord> getProfessionalRecords() {
 		return this.professionalRecords;
 	}
 
-	public void setProffesionalRecords(
-			Collection<ProfessionalRecord> professionalRecords) {
+	public void setProffesionalRecords(final Collection<ProfessionalRecord> professionalRecords) {
 		this.professionalRecords = professionalRecords;
 	}
 
-	@NotNull
-	@OneToMany(mappedBy = "curriculum")
+	@OneToMany()
 	public Collection<MiscellaneousRecord> getMiscellaneousRecords() {
 		return this.miscellaneousRecords;
 	}
 
-	public void setMiscellaneousRecords(
-			Collection<MiscellaneousRecord> miscellaneousRecords) {
+	public void setMiscellaneousRecords(final Collection<MiscellaneousRecord> miscellaneousRecords) {
 		this.miscellaneousRecords = miscellaneousRecords;
 	}
 
-	@NotNull
-	@OneToMany(mappedBy = "curriculum")
+	@OneToMany()
 	public Collection<EducationRecord> getEducationRecords() {
 		return this.educationRecords;
 	}
 
-	public void setEducationRecords(Collection<EducationRecord> educationRecords) {
+	public void setEducationRecords(final Collection<EducationRecord> educationRecords) {
 		this.educationRecords = educationRecords;
 	}
 
-	@NotNull
-	@OneToMany(mappedBy = "curriculum")
+	@OneToMany()
 	public Collection<EndorserRecord> getEndorserRecords() {
 		return this.endorserRecords;
 	}
 
-	public void setEndorserRecords(Collection<EndorserRecord> endorserRecords) {
+	public void setEndorserRecords(final Collection<EndorserRecord> endorserRecords) {
 		this.endorserRecords = endorserRecords;
 	}
 

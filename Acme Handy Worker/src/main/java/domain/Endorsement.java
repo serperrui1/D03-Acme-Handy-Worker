@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 
 @Entity
@@ -34,55 +35,29 @@ public class Endorsement extends DomainEntity {
 		this.comments = comments;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	/*
-	 * private HandyWorker senderHandyWorker;
-	 * private HandyWorker recipientHandyWorker;
-	 * private Customer senderCustomer;
-	 * private Customer recipientCustomer;
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToOne(optional = false)
-	 * public HandyWorker getsenderHandyWorker() {
-	 * return this.senderHandyWorker;
-	 * }
-	 * 
-	 * public void setSenderHandyWorker(HandyWorker senderHandyWorker) {
-	 * this.senderHandyWorker = senderHandyWorker;
-	 * }
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToOne(optional = false)
-	 * public HandyWorker getRecipientHandyWorker() {
-	 * return this.recipientHandyWorker;
-	 * }
-	 * 
-	 * public void setRecipientHandyWorker(HandyWorker recipientHandyWorker) {
-	 * this.recipientHandyWorker = recipientHandyWorker;
-	 * }
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToOne(optional = false)
-	 * public Customer getSenderCustomer() {
-	 * return this.senderCustomer;
-	 * }
-	 * 
-	 * public void setSenderCustomer(Customer senderCustomer) {
-	 * this.senderCustomer = senderCustomer;
-	 * }
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToOne(optional = false)
-	 * public Customer getRecipientCustomer() {
-	 * return this.recipientCustomer;
-	 * }
-	 * 
-	 * public void setRecipientCustomer(Customer recipientCustomer) {
-	 * this.recipientCustomer = recipientCustomer;
-	 * }
-	 */
+
+	private Endorser	endorser;
+	private Endorser	recipient;
+
+
+	@OneToMany(mappedBy = "endorser")
+	public Endorser getEndorser() {
+		return this.endorser;
+	}
+
+	public void setEndorser(final Endorser endorser) {
+		this.endorser = endorser;
+	}
+
+	@OneToMany(mappedBy = "recipient")
+	public Endorser getRecipient() {
+		return this.recipient;
+	}
+
+	public void setRecipient(final Endorser recipient) {
+		this.recipient = recipient;
+	}
+
 }
