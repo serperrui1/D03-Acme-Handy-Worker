@@ -322,6 +322,7 @@
 		<property name="make" value="SergioPerea" />
 	</bean>
 	
+<<<<<<< Updated upstream
 	
 	<bean class="domain.HandyWorker" id="handyworker2">
 		<property name="name" value="Francisco" />
@@ -713,4 +714,123 @@
 	
 	
 	
+=======
+		<!-- Social Profiles  -->
+
+	<bean class="domain.Profile" id="profile1">
+		<property name="nick" value="nick1" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick1" />
+	</bean>
+		<bean class="domain.Profile" id="profile2">
+		<property name="nick" value="nick1" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick1" />
+	</bean>
+		<bean class="domain.Profile" id="profile3">
+		<property name="nick" value="nick2" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick2" />
+	</bean>
+		<bean class="domain.Profile" id="profile4">
+		<property name="nick" value="nick2" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick2" />
+	</bean>
+		<bean class="domain.Profile" id="profile5">
+		<property name="nick" value="nick3" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick3" />
+	</bean>
+		<bean class="domain.Profile" id="profile6">
+		<property name="nick" value="nick3" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick3" />
+	</bean>
+			<bean class="domain.Profile" id="profile7">
+		<property name="nick" value="nick4" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick4" />
+	</bean>
+		<bean class="domain.Profile" id="profile8">
+		<property name="nick" value="nick4" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick4" />
+	</bean>
+		<bean class="domain.Profile" id="profile9">
+		<property name="nick" value="nick4" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick4" />
+	</bean>
+		<bean class="domain.Profile" id="profile10">
+		<property name="nick" value="nick5" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick5" />
+	</bean>
+		<bean class="domain.Profile" id="profile11">
+		<property name="nick" value="nick5" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick5" />
+	</bean>
+		<bean class="domain.Profile" id="profile12">
+		<property name="nick" value="nick6" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick6" />
+	</bean>	
+			<bean class="domain.Profile" id="profile13">
+		<property name="nick" value="nick6" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick6" />
+	</bean>
+		<bean class="domain.Profile" id="profile14">
+		<property name="nick" value="nick6" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick6" />
+	</bean>
+		<bean class="domain.Profile" id="profile15">
+		<property name="nick" value="nick7" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick7" />
+	</bean>
+		<bean class="domain.Profile" id="profile16">
+		<property name="nick" value="nick8" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick8" />
+	</bean>
+		<bean class="domain.Profile" id="profile17">
+		<property name="nick" value="nick8" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick8" />
+	</bean>
+		<bean class="domain.Profile" id="profile18">
+		<property name="nick" value="nick9" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick9" />
+	</bean>		
+		<bean class="domain.Profile" id="profile19">
+		<property name="nick" value="nick9" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick9" />
+	</bean>
+		<bean class="domain.Profile" id="profile20">
+		<property name="nick" value="nick10" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick10" />
+	</bean>
+		<bean class="domain.Profile" id="profile21">
+		<property name="nick" value="nick11" />
+		<property name="nameSocialNetwork" value="Instagram" />
+		<property name="link" value="https://www.instagram.com/nick11" />	
+	</bean>	
+		<bean class="domain.Profile" id="profile22">
+		<property name="nick" value="nick11" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick11" />
+	</bean>
+		<bean class="domain.Profile" id="profile21">
+		<property name="nick" value="nick12" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick12" />
+	</bean>
+>>>>>>> Stashed changes
 </beans>
