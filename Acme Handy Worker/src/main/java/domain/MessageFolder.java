@@ -8,8 +8,6 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -46,9 +44,7 @@ public class MessageFolder extends DomainEntity {
 	private Actor				actor;
 
 
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "messageFolder")
+	@OneToMany()
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}
@@ -57,8 +53,6 @@ public class MessageFolder extends DomainEntity {
 		this.messages = messages;
 	}
 
-	@Valid
-	@NotNull
 	@ManyToOne(optional = false)
 	public Actor getActor() {
 		return this.actor;
