@@ -16,7 +16,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- User accounts -->
+	
 	<!-- ADMIN -->
+	
 	<bean id="userAccount1" class="security.UserAccount">
 		<property name="username" value="admin1" />
 		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
@@ -29,13 +31,39 @@
 		</property>
 	</bean>
 	
-		<bean id="userAccount2" class="security.UserAccount">
-		<property name="username" value="admin2" />
-		<property name="password" value="c84258e9c39059a89ab77d846ddab909" />
+	<!-- REFEREE -->
+	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="referee1" />
+		<property name="password" value="ffbc4675f865e0e9aa28bdf7a0437010" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="ADMIN" />
+					<property name="authority" value="REFEREE" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="referee2" />
+		<property name="password" value="ffbW4675f865e0e9aa28bdf7a043K010" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="REFEREE" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="referee3" />
+		<property name="password" value="hfbc4675f865e0e9aa28bdf7a0437010" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="REFEREE" />
 				</bean>
 			</list>
 		</property>
@@ -43,7 +71,7 @@
 
 	<!-- CUSTOMER -->
 	
-	<bean id="userAccount3" class="security.UserAccount">
+	<bean id="userAccount5" class="security.UserAccount">
 		<property name="username" value="customer1" />
 		<property name="password" value="ffbc4675f864e0e9aab8bdf7a0437010" />
 		<property name="authorities">
@@ -55,7 +83,7 @@
 		</property>
 	</bean>
 
-	<bean id="userAccount4" class="security.UserAccount">
+	<bean id="userAccount6" class="security.UserAccount">
 		<property name="username" value="customer2" />
 		<property name="password" value="5ce4d191fd14ac85a1469fb8c29b7a7b" />
 		<property name="authorities">
@@ -67,7 +95,7 @@
 		</property>
 	</bean>
 	
-		<bean id="userAccount5" class="security.UserAccount">
+		<bean id="userAccount7" class="security.UserAccount">
 		<property name="username" value="customer3" />
 		<property name="password" value="033f7f6121501ae98285ad77f216d5e7" />
 		<property name="authorities">
@@ -80,7 +108,7 @@
 	</bean>
 	
 	<!-- HANDYWORKER -->
-	<bean id="userAccount6" class="security.UserAccount">
+	<bean id="userAccount8" class="security.UserAccount">
 		<property name="username" value="handyworker1" />
 		<property name="password" value="ebad64149cc767ba26ef069819279fd5" />
 		<property name="authorities">
@@ -92,79 +120,68 @@
 		</property>
 	</bean>
 
-	<bean id="userAccount7" class="security.UserAccount">
-		<property name="username" value="handyworker2" />
-		<property name="password" value="01925b7892e2ca194993afdd20a7c761" />
-		<property name="authorities">
-			<list>
-				<bean class="security.Authority">
-					<property name="authority" value="HANDYWORKER" />
-				</bean>
-			</list>
-		</property>
-	</bean>
-	
-		<bean id="userAccount7" class="security.UserAccount">
-		<property name="username" value="handyworker2" />
-		<property name="password" value="01925b7892e2ca194993afdd20a7c761" />
-		<property name="authorities">
-			<list>
-				<bean class="security.Authority">
-					<property name="authority" value="HANDYWORKER" />
-				</bean>
-			</list>
-		</property>
-	</bean>
-	
-		<bean id="userAccount8" class="security.UserAccount">
-		<property name="username" value="handyworker3" />
-		<property name="password" value="b504f5a746deafd3e78b9c85c20ca653" />
-		<property name="authorities">
-			<list>
-				<bean class="security.Authority">
-					<property name="authority" value="HANDYWORKER" />
-				</bean>
-			</list>
-		</property>
-	</bean>
-	
-	
-	<!-- REFEREE -->
-	
 	<bean id="userAccount9" class="security.UserAccount">
-		<property name="username" value="referee1" />
-		<property name="password" value="092d469d0a71c8002e32f808b861f9a4" />
+		<property name="username" value="handyworker2" />
+		<property name="password" value="01925b7892e2ca194993afdd20a7c761" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="REFEREE" />
+					<property name="authority" value="HANDYWORKER" />
 				</bean>
 			</list>
 		</property>
 	</bean>
-	<bean id="userAccount10" class="security.UserAccount">
-		<property name="username" value="referee2" />
-		<property name="password" value="ee7fc2330a75afd58679d5ad4f768460" />
+	
+		<bean id="userAccount10" class="security.UserAccount">
+		<property name="username" value="handyworker3" />
+		<property name="password" value="01925b7892e2ca194993afdd20a7c761" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="REFEREE" />
+					<property name="authority" value="HANDYWORKER" />
 				</bean>
 			</list>
 		</property>
 	</bean>
-		<bean id="userAccount11" class="security.UserAccount">
-		<property name="username" value="referee3" />
-		<property name="password" value="e7395e4f7c79a7cb1d93cec0849dd1de" />
+
+	<!-- SPONSOR -->
+	
+	<bean id="userAccount11" class="security.UserAccount">
+		<property name="username" value="sponsor1" />
+		<property name="password" value="092d123d0a71c8002e32f808b861f9a4" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="REFEREE" />
+					<property name="authority" value="SPONSOR" />
 				</bean>
 			</list>
 		</property>
 	</bean>
-		<!-- Message Folders -->
+	<bean id="userAccount12" class="security.UserAccount">
+		<property name="username" value="sponsor2" />
+		<property name="password" value="ee7fc2330a7562958679d5ad4f768460" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="SPONSOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+		<bean id="userAccount13" class="security.UserAccount">
+		<property name="username" value="sponsor3" />
+		<property name="password" value="e7395e4f7c79b8eb1d93cec0849dd1de" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="SPONSOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<!-- MESSAGE FOLDERS -->
 		<!-- Folders 1-->
 
 	<bean class="domain.MessageFolder" id="messagefolder1">
@@ -270,7 +287,8 @@
 		</property>
 	</bean>
 	
-		<!-- Handy Worker -->
+	<!-- Handy Workers -->
+		
 	<bean class="domain.HandyWorker" id="handyworker1">
 		<property name="name" value="Sergio" />
 		<property name="middleName" value="" />
@@ -278,7 +296,142 @@
 		<property name="photo" value="http://www.foto1.com" />
 		<property name="email" value="Sergioperea@gmail.com" />
 		<property name="phone" value="622545487" />
-		<property name="address" value="Calle caminiviejo n16 , Tomares, Sevilla" />
+		<property name="address" value="Calle caminiviejo nº16 , Tomares, Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount8" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="0.5" />
+		<property name="make" value="SergioPerea" />
+	</bean>
+	
+	
+	<bean class="domain.HandyWorker" id="handyworker2">
+		<property name="name" value="Francisco" />
+		<property name="middleName" value="José" />
+		<property name="surname" value="Rodríguez" />
+		<property name="photo" value="http://www.foto2.com" />
+		<property name="email" value="FranciscoRodriguez@gmail.com" />
+		<property name="phone" value="643782327" />
+		<property name="address" value="Calle Lucernas nº22 , Carmona, Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount9" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="1.0" />
+		<property name="make" value="FrankRodriguez" />
+	</bean>
+	
+	
+	<bean class="domain.HandyWorker" id="handyworker3">
+		<property name="name" value="Tomás" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Pérez" />
+		<property name="photo" value="http://www.foto3.com" />
+		<property name="email" value="Tomas111222@gmail.com" />
+		<property name="phone" value="622511187" />
+		<property name="address" value="Calle Tornados nº8 , Tomares, Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount10" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="0.5" />
+		<property name="make" value="TomasPerez" />
+	</bean>
+	
+	<!-- Customers -->
+	
+	<bean class="domain.Customer" id="customer1">
+		<property name="name" value="Miguel" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Olivas" />
+		<property name="photo" value="http://www.foto4.com" />
+		<property name="email" value="MiguelOlivas@gmail.com" />
+		<property name="phone" value="623061325" />
+		<property name="address" value="Calle de Los Austrias nº8 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount5" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="1.0" />
+	</bean>
+	
+	<bean class="domain.Customer" id="customer2">
+		<property name="name" value="Adrián" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Collins" />
+		<property name="photo" value="http://www.foto5.com" />
+		<property name="email" value="AdriánCollins@gmail.com" />
+		<property name="phone" value="655061325" />
+		<property name="address" value="Calle Santa Eulalia nº4 , Sevilla" />
 		<property name="profiles">
 			<list>	
 			</list>
@@ -300,9 +453,264 @@
 			<list>
 			</list>
 		</property>
-		<property name="score" value="0.5" />
-		<property name="make" value="SergioPerea" />
+		<property name="score" value="1.0" />
 	</bean>
+	
+	<bean class="domain.Customer" id="customer3">
+		<property name="name" value="Lucía" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Rico" />
+		<property name="photo" value="http://www.foto6.com" />
+		<property name="email" value="LuciaRico@gmail.com" />
+		<property name="phone" value="623061325" />
+		<property name="address" value="Calle Tornado nº5 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount7" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="1.0" />
+	</bean>
+	
+	<!-- Administrators -->
+	
+	<bean class="domain.Administrator" id="administrator1">
+		<property name="name" value="Julio" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Buzón" />
+		<property name="photo" value="http://www.foto7.com" />
+		<property name="email" value="JulioBuzon@gmail.com" />
+		<property name="phone" value="655270027" />
+		<property name="address" value="Calle Marqués de KingPing nº3 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount1" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Sponsors -->
+	
+	<bean class="domain.Sponsor" id="sponsor1">
+		<property name="name" value="Michael" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Myers" />
+		<property name="photo" value="http://www.foto8.com" />
+		<property name="email" value="YourHalloweenPal@gmail.com" />
+		<property name="phone" value="655270028" />
+		<property name="address" value="Calle Lucifer nº5 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount11" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="domain.Sponsor" id="sponsor2">
+		<property name="name" value="Freddie" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Krueger" />
+		<property name="photo" value="http://www.foto9.com" />
+		<property name="email" value="YourFireAttacker@gmail.com" />
+		<property name="phone" value="655270029" />
+		<property name="address" value="Calle Llamas nº3 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount12" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="domain.Sponsor" id="sponsor3">
+		<property name="name" value="Jason" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Vorhees" />
+		<property name="photo" value="http://www.foto10.com" />
+		<property name="email" value="JasonVorhees@gmail.com" />
+		<property name="phone" value="655270030" />
+		<property name="address" value="Calle Riverdale nº2 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount13" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Referees -->
+	
+	<bean class="domain.Referee" id="referee1">
+		<property name="name" value="David" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Berbel" />
+		<property name="photo" value="http://www.foto11.com" />
+		<property name="email" value="DavidBerbel@gmail.com" />
+		<property name="phone" value="655270031" />
+		<property name="address" value="Calle Borbones nº9 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount2" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="domain.Referee" id="referee1">
+		<property name="name" value="Lorenzo" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Santana" />
+		<property name="photo" value="http://www.foto12.com" />
+		<property name="email" value="LorenSantana@gmail.com" />
+		<property name="phone" value="655270032" />
+		<property name="address" value="Calle Croquetas nº9 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount3" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="domain.Referee" id="referee1">
+		<property name="name" value="Pablo" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Ortíz" />
+		<property name="photo" value="http://www.foto13.com" />
+		<property name="email" value="Pabloortiz@gmail.com" />
+		<property name="phone" value="655270033" />
+		<property name="address" value="Calle Ortigas nº9 , Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount4" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
 	
 	
 </beans>
