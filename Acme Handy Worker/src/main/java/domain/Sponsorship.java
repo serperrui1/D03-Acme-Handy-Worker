@@ -1,12 +1,10 @@
-package domain;
 
-import java.util.Collection;
+package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.URL;
@@ -15,40 +13,43 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Sponsorship extends DomainEntity {
 
-	private String banner;
-	private String targetPage;
-	private CreditCard creditCard;
+	private String		banner;
+	private String		targetPage;
+	private CreditCard	creditCard;
+
 
 	@URL
 	public String getBanner() {
-		return banner;
+		return this.banner;
 	}
 
-	public void setBanner(String banner) {
+	public void setBanner(final String banner) {
 		this.banner = banner;
 	}
 
 	@URL
 	public String getTargetPage() {
-		return targetPage;
+		return this.targetPage;
 	}
 
-	public void setTargetPage(String targetPage) {
+	public void setTargetPage(final String targetPage) {
 		this.targetPage = targetPage;
 	}
 
 	@Valid
 	public CreditCard getCreditCard() {
-		return creditCard;
+		return this.creditCard;
 	}
 
-	public void setCreditCard(CreditCard creditCard) {
+	public void setCreditCard(final CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Sponsor sponsor;
-	private Collection<Tutorial> tutorials;
+	private Sponsor		sponsor;
+	private Tutorial	tutorial;
+
 
 	@Valid
 	@ManyToOne(optional = false)
@@ -56,18 +57,17 @@ public class Sponsorship extends DomainEntity {
 		return this.sponsor;
 	}
 
-	public void setSponsor(Sponsor sponsor) {
+	public void setSponsor(final Sponsor sponsor) {
 		this.sponsor = sponsor;
 	}
 
-	@Valid
-	@OneToMany
-	public Collection<Tutorial> getTutorials() {
-		return this.tutorials;
+	@ManyToOne(optional = false)
+	public Tutorial getTutorial() {
+		return this.tutorial;
 	}
 
-	public void setTutorials(Collection<Tutorial> tutorials) {
-		this.tutorials = tutorials;
+	public void setTutorial(final Tutorial tutorial) {
+		this.tutorial = tutorial;
 	}
 
 }

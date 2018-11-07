@@ -1,7 +1,6 @@
 
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -10,9 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.Valid;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -92,24 +89,13 @@ public class FixUpTask extends DomainEntity {
 
 
 	// Relationships ----------------------------------------------------------
-	private Collection<Complaint>	complaints;
-	private Warranty				warranty;
-	private Customer				customer;
-	private WorkPlan				workPlan;
-	private Category				category;
-	private Finder					finder;
-	private Application				application;
+	private Warranty	warranty;
+	private Customer	customer;
+	private WorkPlan	workPlan;
+	private Category	category;
+	private Finder		finder;
+	private Application	application;
 
-
-	@Valid
-	@OneToMany
-	public Collection<Complaint> getComplaints() {
-		return this.complaints;
-	}
-
-	public void setComplaints(final Collection<Complaint> complaints) {
-		this.complaints = complaints;
-	}
 
 	@ManyToOne(optional = false)
 	public Category getCategory() {

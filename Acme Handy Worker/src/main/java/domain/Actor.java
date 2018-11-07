@@ -7,7 +7,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -24,7 +23,7 @@ public class Actor extends DomainEntity {
 	private String	email;
 	private String	phone;
 	private String	address;
-//afdsjdfgsd
+
 
 	@NotBlank
 	public String getName() {
@@ -45,6 +44,7 @@ public class Actor extends DomainEntity {
 	}
 
 	@URL
+	@NotBlank
 	public String getPhoto() {
 		return this.photo;
 	}
@@ -95,7 +95,6 @@ public class Actor extends DomainEntity {
 	private Collection<Profile>			profiles;
 
 
-	@Valid
 	@OneToMany(mappedBy = "sender")
 	public Collection<Message> getSentMessages() {
 		return this.sentMessages;
@@ -105,7 +104,6 @@ public class Actor extends DomainEntity {
 		this.sentMessages = sentMessages;
 	}
 
-	@Valid
 	@OneToMany(mappedBy = "recipient")
 	public Collection<Message> getReceivedMessages() {
 		return this.receivedMessages;
@@ -115,8 +113,7 @@ public class Actor extends DomainEntity {
 		this.receivedMessages = receivedMessages;
 	}
 
-	@Valid
-	@OneToMany(mappedBy = "actor")
+	@OneToMany()
 	public Collection<MessageFolder> getMessageFolders() {
 		return this.messageFolders;
 	}
@@ -125,7 +122,7 @@ public class Actor extends DomainEntity {
 		this.messageFolders = messageFolders;
 	}
 
-	@OneToMany(mappedBy = "actor")
+	@OneToMany()
 	public Collection<Profile> getProfiles() {
 		return this.profiles;
 	}

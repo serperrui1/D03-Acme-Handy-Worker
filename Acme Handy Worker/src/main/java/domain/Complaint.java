@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -23,19 +24,20 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Complaint extends DomainEntity {
 
-	private String ticker;
-	private Date moment;
-	private String description;
-	private Integer attachments;
+	private String	ticker;
+	private Date	moment;
+	private String	description;
+	private Integer	attachments;
+
 
 	@NotBlank
 	@Pattern(regexp = "^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9]{6}$")
 	@Column(unique = true)
 	public String getTicker() {
-		return ticker;
+		return this.ticker;
 	}
 
-	public void setTicker(String ticker) {
+	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
 
@@ -43,39 +45,40 @@ public class Complaint extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
-		return moment;
+		return this.moment;
 	}
 
-	public void setMoment(Date moment) {
+	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
 
 	@NotBlank
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
 	@Transient
 	public Integer getAttachments() {
 		int result = 0;
-		for (Report r : this.getReports()) {
+		for (final Report r : this.getReports())
 			result = result + r.getAttachments().size();
-		}
 		return result;
 	}
 
-	public void setAttachments(Integer attachments) {
+	public void setAttachments(final Integer attachments) {
 		this.attachments = attachments;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Customer customer;
-	private FixUpTask fixUpTask;
-	private Collection<Report> reports;
+	private Customer			customer;
+	private FixUpTask			fixUpTask;
+	private Collection<Report>	reports;
+
 
 	@Valid
 	@ManyToOne(optional = false)
@@ -83,7 +86,7 @@ public class Complaint extends DomainEntity {
 		return this.customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(final Customer customer) {
 		this.customer = customer;
 	}
 
@@ -93,7 +96,7 @@ public class Complaint extends DomainEntity {
 		return this.fixUpTask;
 	}
 
-	public void setFixUpTask(FixUpTask fixUpTask) {
+	public void setFixUpTask(final FixUpTask fixUpTask) {
 		this.fixUpTask = fixUpTask;
 	}
 
@@ -103,7 +106,7 @@ public class Complaint extends DomainEntity {
 		return this.reports;
 	}
 
-	public void setReports(Collection<Report> Report) {
+	public void setReports(final Collection<Report> Report) {
 		this.reports = Report;
 	}
 }
