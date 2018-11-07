@@ -270,4 +270,39 @@
 		</property>
 	</bean>
 	
+		<!-- Handy Worker -->
+	<bean class="domain.HandyWorker" id="handyworker1">
+		<property name="name" value="Sergio" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Perea" />
+		<property name="photo" value="http://www.foto1.com" />
+		<property name="email" value="Sergioperea@gmail.com" />
+		<property name="phone" value="622545487" />
+		<property name="address" value="Calle caminiviejo n16 , Tomares, Sevilla" />
+		<property name="profiles">
+			<list>	
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccount6" />
+		<property name="messageFolder">
+			<list>
+				<ref bean="messagebox1" />
+				<ref bean="messagebox2" />
+				<ref bean="messagebox3" />
+				<ref bean="messagebox4" />
+			</list>
+		</property>
+		<property name="sentMessages">
+			<list>
+			</list>
+		</property>		
+		<property name="receivedMessages">
+			<list>
+			</list>
+		</property>
+		<property name="score" value="0.5" />
+		<property name="make" value="SergioPerea" />
+	</bean>
+	
+	
 </beans>
