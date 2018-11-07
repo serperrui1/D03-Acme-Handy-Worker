@@ -322,7 +322,7 @@
 		<property name="make" value="SergioPerea" />
 	</bean>
 	
-<<<<<<< Updated upstream
+
 	
 	<bean class="domain.HandyWorker" id="handyworker2">
 		<property name="name" value="Francisco" />
@@ -712,9 +712,6 @@
 		</property>
 	</bean>
 	
-	
-	
-=======
 		<!-- Social Profiles  -->
 
 	<bean class="domain.Profile" id="profile1">
@@ -832,5 +829,370 @@
 		<property name="nameSocialNetwork" value="Facebook" />
 		<property name="link" value="https://www.facebook.com/nick12" />
 	</bean>
->>>>>>> Stashed changes
+	
+	<!-- MESSAGES  -->
+	
+	<bean id="message1" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker1" /> 
+  		<property name="recipient" ref="customer1" /> 
+  	</bean>
+  	
+  	<bean id="message2" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker2" /> 
+  		<property name="recipient" ref="customer2" /> 
+  	</bean>
+  	
+  	<bean id="message3" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker3" /> 
+  		<property name="recipient" ref="customer3" /> 
+  	</bean>
+  	
+  	<bean id="message4" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="sponsor1" /> 
+  		<property name="recipient" ref="customer1" /> 
+  	</bean>
+  	
+  	<bean id="message5" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="sponsor2" /> 
+  		<property name="recipient" ref="customer3" /> 
+  	</bean>
+  	
+  	<bean id="message6" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="admin1" /> 
+  	</bean>
+  	
+  	<bean id="message7" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="referee3" /> 
+  		<property name="recipient" ref="sponsor2" /> 
+  	</bean>
+  	
+  	<bean id="message8" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker1" /> 
+  		<property name="recipient" ref="customer3" /> 
+  	</bean>
+  	
+  	<bean id="message9" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker2" /> 
+  		<property name="recipient" ref="customer3" /> 
+  	</bean>
+  	
+  	<bean id="message10" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="admin1" /> 
+  		<property name="recipient" ref="customer2" /> 
+  	</bean>
+  	
+  	<bean id="message11" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="handyworker3" /> 
+  	</bean>
+  	
+  	<bean id="message12" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Welcome" /> 
+  		<property name="body" value="How are you?" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker3" /> 
+  		<property name="recipient" ref="sponsor1" /> 
+  	</bean>
+  	
+  	<bean id="message13" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="referee2" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message14" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message15" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="admin1" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message16" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor2" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message17" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor1" /> 
+  		<property name="recipient" ref="customer3" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message18" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="customer2" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message19" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor2" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message20" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Alert" /> 
+  		<property name="body" value="This is a really dangerous message" /> 
+  		<property name="priority" value="HIGH" /> 
+  		<property name="sender" ref="sponsor2" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder2" /> 
+  	</bean>
+  	
+  	<bean id="message21" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="customer3" /> 
+  		<property name="recipient" ref="admin1" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message22" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="sponsor1" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message23" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="customer2" /> 
+  		<property name="recipient" ref="sponsor2" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message24" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="customer2" /> 
+  		<property name="recipient" ref="customer3" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message25" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="customer2" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message26" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="referee1" /> 
+  		<property name="recipient" ref="referee2" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message27" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="customer1" /> 
+  		<property name="recipient" ref="sponsor1" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message28" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="handyworker1" /> 
+  		<property name="recipient" ref="handyworker2" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message29" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Spam" /> 
+  		<property name="body" value="I hope you like spam" /> 
+  		<property name="priority" value="LOW" /> 
+  		<property name="sender" ref="admin1" /> 
+  		<property name="recipient" ref="handyworker3" /> 
+ 		<property name="messageFolder" ref="messageFolder3" /> 
+  	</bean>
+  	
+  	<bean id="message30" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="admin1" /> 
+  		<property name="recipient" ref="customer1" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message31" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="handyworker1" /> 
+  		<property name="recipient" ref="customer3" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message32" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="referee2" /> 
+  		<property name="recipient" ref="customer2" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message33" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="sponsor3" /> 
+  		<property name="recipient" ref="customer2" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message34" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="sponsor2" /> 
+  		<property name="recipient" ref="customer2" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message35" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="hanworker1" /> 
+  		<property name="recipient" ref="referee1" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message36" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="admin1" /> 
+  		<property name="recipient" ref="handyworker3" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	<bean id="message37" class="domain.Message">
+	    <property name="moment" value="02/02/2016 20:00" /> 
+  		<property name="subject" value="Congratulations" /> 
+  		<property name="body" value="You are now part of the crew!" /> 
+  		<property name="priority" value="NEUTRAL" /> 
+  		<property name="sender" ref="referee1" /> 
+  		<property name="recipient" ref="referee3" /> 
+ 		<property name="messageFolder" ref="messageFolder4" /> 
+  	</bean>
+  	
+  	
+	
+	
+	
+
 </beans>
