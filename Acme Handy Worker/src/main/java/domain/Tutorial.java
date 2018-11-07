@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -21,17 +22,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Tutorial extends DomainEntity {
 
-	private String title;
-	private Date moment;
-	private String summary;
-	private Collection<String> pictures;
+	private String				title;
+	private Date				moment;
+	private String				summary;
+	private Collection<String>	pictures;
+
 
 	@NotBlank
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(final String title) {
 		this.title = title;
 	}
 
@@ -39,36 +41,38 @@ public class Tutorial extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
-		return moment;
+		return this.moment;
 	}
 
-	public void setMoment(Date moment) {
+	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
 
 	@NotBlank
 	public String getSummary() {
-		return summary;
+		return this.summary;
 	}
 
-	public void setSummary(String summary) {
+	public void setSummary(final String summary) {
 		this.summary = summary;
 	}
 
 	@URL
 	public Collection<String> getPictures() {
-		return pictures;
+		return this.pictures;
 	}
 
-	public void setPictures(Collection<String> pictures) {
+	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
 
+
 	// Relationships ----------------------------------------------------------
 
-	private HandyWorker handyWorker;
-	private Collection<Section> sections;
-	private Sponsorship sponsorship;
+	private HandyWorker			handyWorker;
+	private Collection<Section>	sections;
+	private Sponsorship			sponsorship;
+
 
 	@Valid
 	@ManyToOne(optional = false)
@@ -76,7 +80,7 @@ public class Tutorial extends DomainEntity {
 		return this.handyWorker;
 	}
 
-	public void setHandyWorker(HandyWorker handyWorker) {
+	public void setHandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 
@@ -86,9 +90,17 @@ public class Tutorial extends DomainEntity {
 		return this.sections;
 	}
 
-	public void setSections(Collection<Section> section) {
+	public void setSections(final Collection<Section> section) {
 		this.sections = section;
 	}
-	
-	
+
+	@OneToMany(mappedBy = "tutorial")
+	public Sponsorship getSponsorship() {
+		return this.sponsorship;
+	}
+
+	public void setSponsorship(final Sponsorship sponsorship) {
+		this.sponsorship = sponsorship;
+	}
+
 }

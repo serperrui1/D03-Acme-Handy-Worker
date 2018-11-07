@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Customer extends Actor {
+public class Customer extends Endorser {
 
 	private Double	score;
 
@@ -35,34 +35,19 @@ public class Customer extends Actor {
 	// Relationships ----------------------------------------------------------
 
 	private Collection<Complaint>	complaints;
-	//private Collection<Endorsement>	sentEndorsements;
-	//private Collection<Endorsement>	receivedEndorsements;
+	private Collection<FixUpTask>	fixUpTasks;
 
-	private FixUpTask				fixUpTask;
 
-<<<<<<< HEAD
-
-	@OneToMany(mappedBy = "customer")
-	public FixUpTask getFixUpTask() {
-		return this.fixUpTask;
+	@OneToMany()
+	public Collection<FixUpTask> getFixUpTasks() {
+		return this.fixUpTasks;
 	}
 
-	public void setFixUpTask(final FixUpTask fixUpTask) {
-		this.fixUpTask = fixUpTask;
-=======
-	public void setComplaints(Collection<Complaint> complaints) {
+	public void setFixUpTasks(final Collection<FixUpTask> fixUpTasks) {
+		this.fixUpTasks = fixUpTasks;
+	}
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
-	}
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "sender")
-	public Collection<Endorsement> getSentEndorsements() {
-		return this.sentEndorsements;
-	}
-
-	public void setSentEndorsements(Collection<Endorsement> sentEndorsements) {
-		this.sentEndorsements = sentEndorsements;
->>>>>>> Dani
 	}
 
 	@Valid
@@ -71,39 +56,4 @@ public class Customer extends Actor {
 		return this.complaints;
 	}
 
-<<<<<<< HEAD
-	public void setComplaints(final Collection<Complaint> complaints) {
-		this.complaints = complaints;
-=======
-	public void setReceivedEndorsements(Collection<Endorsement> receivedEndorsements) {
-		this.receivedEndorsements = receivedEndorsements;
->>>>>>> Dani
-	}
-	/*
-	 * @Valid
-	 * 
-	 * @NotNull
-	 * 
-	 * @OneToMany(mappedBy = "makes")
-	 * public Collection<Endorsement> getSentEndorsements() {
-	 * return this.sentEndorsements;
-	 * }
-	 * 
-	 * public void setSentEndorsements(final Collection<Endorsement> sentEndorsements) {
-	 * this.sentEndorsements = sentEndorsements;
-	 * }
-	 * 
-	 * @Valid
-	 * 
-	 * @NotNull
-	 * 
-	 * @OneToMany(mappedBy = "recipient")
-	 * public Collection<Endorsement> getReceivedEndorsements() {
-	 * return this.receivedEndorsements;
-	 * }
-	 * 
-	 * public void setReceivedEndorsements(final Collection<Endorsement> receivedEndorsements) {
-	 * this.receivedEndorsements = receivedEndorsements;
-	 * }
-	 */
 }

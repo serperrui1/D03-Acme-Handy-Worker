@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -6,61 +7,69 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class HandyWorker extends Actor {
+public class HandyWorker extends Endorser {
 
-	private String makeName;
+	private String	makeName;
+
 
 	@NotBlank
 	public String getMakeName() {
 		return this.makeName;
 	}
 
-	public void setMakeName(String makeName) {
+	public void setMakeName(final String makeName) {
 		this.makeName = makeName;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Collection<Tutorial> tutorials;
-	private Collection<Endorsement> sentEndorsements;
-	private Collection<Endorsement> receivedEndorsements;
+	private Collection<Tutorial>	tutorials;
+	private Application				application;
+	private Collection<WorkPlan>	workPlans;
+	private Curriculum				curriculum;
+
 
 	@Valid
-	@OneToMany
+	@OneToMany(mappedBy = "handyWorker")
 	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
 
-	public void setTutorials(Collection<Tutorial> tutorial) {
+	public void setTutorials(final Collection<Tutorial> tutorial) {
 		this.tutorials = tutorial;
 	}
 
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "sender")
-	public Collection<Endorsement> getSentEndorsements() {
-		return this.sentEndorsements;
+	@OneToOne(optional = false)
+	public Application getApplication() {
+		return this.application;
 	}
 
-	public void setSentEndorsements(Collection<Endorsement> sentEndorsements) {
-		this.sentEndorsements = sentEndorsements;
+	public void setApplication(final Application application) {
+		this.application = application;
 	}
 
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "recipient")
-	public Collection<Endorsement> getReceivedEndorsements() {
-		return this.receivedEndorsements;
+	@OneToMany(mappedBy = "handyWorker")
+	public Collection<WorkPlan> getWorkPlans() {
+		return this.workPlans;
 	}
 
-	public void setReceivedEndorsements(
-			Collection<Endorsement> receivedEndorsements) {
-		this.receivedEndorsements = receivedEndorsements;
+	public void setWorkPlans(final Collection<WorkPlan> workPlans) {
+		this.workPlans = workPlans;
+	}
+
+	@OneToOne(optional = true)
+	public Curriculum getCurriculum() {
+		return this.curriculum;
+	}
+
+	public void setCurriculum(final Curriculum curriculum) {
+		this.curriculum = curriculum;
 	}
 }

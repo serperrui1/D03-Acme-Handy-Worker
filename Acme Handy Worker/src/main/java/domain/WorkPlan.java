@@ -1,9 +1,13 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -12,7 +16,9 @@ public class WorkPlan extends DomainEntity {
 
 	//Relationships
 
-	private FixUpTask	fixUpTask;
+	private FixUpTask			fixUpTask;
+	private Collection<Phase>	phases;
+	private HandyWorker			handyWorker;
 
 
 	@OneToOne(optional = false)
@@ -22,6 +28,24 @@ public class WorkPlan extends DomainEntity {
 
 	public void setFixUpTask(final FixUpTask fixUpTask) {
 		this.fixUpTask = fixUpTask;
+	}
+
+	@OneToMany
+	public Collection<Phase> getPhases() {
+		return this.phases;
+	}
+
+	public void setPhases(final Collection<Phase> phases) {
+		this.phases = phases;
+	}
+
+	@ManyToOne(optional = false)
+	public HandyWorker getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
 	}
 
 }

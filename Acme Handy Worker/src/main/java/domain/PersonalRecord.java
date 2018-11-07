@@ -1,9 +1,9 @@
+
 package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -63,6 +63,4 @@ public class PersonalRecord extends DomainEntity {
 		this.linkedIn = linkedIn;
 	}
 
-	// Relationships ----------------------------------------------------------
-	
 }

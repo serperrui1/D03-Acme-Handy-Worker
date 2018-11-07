@@ -1,11 +1,10 @@
+
 package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -14,70 +13,59 @@ import org.hibernate.validator.constraints.URL;
 @Entity
 @Access(AccessType.PROPERTY)
 public class EndorserRecord extends DomainEntity {
-	private String fullName;
-	private String email;
-	private String phone;
-	private String linkedIn;
-	private String comments;
+
+	private String	fullName;
+	private String	email;
+	private String	phone;
+	private String	linkedIn;
+	private String	comments;
+
 
 	@NotBlank
 	public String getFullName() {
-		return fullName;
+		return this.fullName;
 	}
 
-	public void setFullName(String fullName) {
+	public void setFullName(final String fullName) {
 		this.fullName = fullName;
 	}
 
 	@NotBlank
 	@Email
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
 	@NotBlank
 	public String getPhone() {
-		return phone;
+		return this.phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(final String phone) {
 		this.phone = phone;
 	}
 
 	@URL
 	@NotBlank
 	public String getLinkedIn() {
-		return linkedIn;
+		return this.linkedIn;
 	}
 
-	public void setLinkedIn(String linkedIn) {
+	public void setLinkedIn(final String linkedIn) {
 		this.linkedIn = linkedIn;
 	}
 
 	@ElementCollection
 	public String getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(String comments) {
+	public void setComments(final String comments) {
 		this.comments = comments;
 	}
 
-	// Relationships ----------------------------------------------------------
-
-	private Curriculum curriculum;
-
-	@Valid
-	@ManyToOne(optional = false)
-	public Curriculum getCurriculum() {
-		return this.curriculum;
-	}
-
-	public void setCurriculum(Curriculum curriculum) {
-		this.curriculum = curriculum;
-	}
 }
