@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.Valid;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -63,10 +62,10 @@ public class Complaint extends DomainEntity {
 
 	@Transient
 	public Integer getAttachments() {
-		int result = 0;
+		attachments  = 0;
 		for (final Report r : this.getReports())
-			result = result + r.getAttachments().size();
-		return result;
+			attachments = attachments + r.getAttachments().size();
+		return attachments;
 	}
 
 	public void setAttachments(final Integer attachments) {
@@ -80,7 +79,6 @@ public class Complaint extends DomainEntity {
 	private Collection<Report>	reports;
 
 
-	@Valid
 	@ManyToOne(optional = false)
 	public Customer getCustomer() {
 		return this.customer;
@@ -90,7 +88,6 @@ public class Complaint extends DomainEntity {
 		this.customer = customer;
 	}
 
-	@Valid
 	@ManyToOne(optional = false)
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
@@ -100,7 +97,6 @@ public class Complaint extends DomainEntity {
 		this.fixUpTask = fixUpTask;
 	}
 
-	@Valid
 	@OneToMany
 	public Collection<Report> getReports() {
 		return this.reports;

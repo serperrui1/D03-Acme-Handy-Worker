@@ -1,5 +1,6 @@
-
 package domain;
+
+import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -12,39 +13,40 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Warranty extends DomainEntity {
 
-	private String	title;
-	private String	terms;
-	private String	laws;
-
+	private String title;
+	private Collection<String> terms;
+	private Collection<String> laws;
 
 	@NotBlank
 	public String getTitle() {
 		return this.title;
 	}
+
 	public void setTitle(final String title) {
 		this.title = title;
 	}
+
 	@NotBlank
-	public String getTerms() {
+	public Collection<String> getTerms() {
 		return this.terms;
 	}
-	public void setTerms(final String terms) {
+
+	public void setTerms(Collection<String>terms) {
 		this.terms = terms;
 	}
+
 	@NotBlank
-	public String getLaws() {
+	public Collection<String> getLaws() {
 		return this.laws;
 	}
-	public void setLaws(final String laws) {
+
+	public void setLaws(Collection<String>laws) {
 		this.laws = laws;
 	}
 
+	// Relationships
 
-	//Relationships
-
-	private Finder		finder;
-	private FixUpTask	fixUpTask;
-
+	private Finder finder;
 
 	@OneToOne(optional = true)
 	public Finder getFinder() {
@@ -53,14 +55,6 @@ public class Warranty extends DomainEntity {
 
 	public void setFinder(final Finder finder) {
 		this.finder = finder;
-	}
-
-	@OneToOne(optional = false)
-	public FixUpTask getFixUpTask() {
-		return this.fixUpTask;
-	}
-	public void setFixUpTask(final FixUpTask fixUpTask) {
-		this.fixUpTask = fixUpTask;
 	}
 
 }

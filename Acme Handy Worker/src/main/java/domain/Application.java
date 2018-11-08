@@ -8,10 +8,14 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -21,11 +25,11 @@ public class Application extends DomainEntity {
 	private String				status;
 	private Double				price;
 	private Collection<String>	comments;
-
-
-	//private int statusColor;
+	private String statusColor;
 
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -60,8 +64,19 @@ public class Application extends DomainEntity {
 		this.comments = comments;
 	}
 
+	//TODO: Propiedad derivada
+	@Transient
+	public String getStatusColor() {
+		return statusColor;
+	}
+
+	public void setStatusColor(String statusColor) {
+		this.statusColor = statusColor;
+	}
 
 	//Relationships
+
+
 
 	private FixUpTask	fixUpTask;
 	private HandyWorker	handyworker;

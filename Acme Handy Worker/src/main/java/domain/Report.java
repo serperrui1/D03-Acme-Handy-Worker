@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -40,6 +39,7 @@ public class Report extends DomainEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	//@ElementCollection
 	public Collection<String> getAttachments() {
 		return attachments;
 	}
@@ -50,8 +50,17 @@ public class Report extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 	private Complaint complaint;
 	private Collection<Note> notes;
+	private Referee referee;
 	
-	@Valid
+	
+	@ManyToOne(optional= false)
+	public Referee getReferee() {
+		return referee;
+	}
+	public void setReferee(Referee referee) {
+		this.referee = referee;
+	}
+	
 	@ManyToOne(optional = false)
 	public Complaint getComplaint() {
 		return this.complaint;
@@ -61,7 +70,6 @@ public class Report extends DomainEntity {
 		this.complaint = complaint;
 	}
 	
-	@Valid
 	@OneToMany
 	public Collection<Note> getNotes() {
 		return this.notes;

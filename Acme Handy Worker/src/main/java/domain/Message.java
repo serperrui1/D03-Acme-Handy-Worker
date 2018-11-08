@@ -1,8 +1,9 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
+
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -24,7 +25,7 @@ public class Message extends DomainEntity {
 	private String		subject;
 	private String		body;
 	private String		priority;
-	private Set<String>	tags;
+	private Collection<String>	tags;
 
 
 	@Past
@@ -49,7 +50,7 @@ public class Message extends DomainEntity {
 		return this.priority;
 	}
 
-	public Set<String> getTags() {
+	public Collection<String> getTags() {
 		return this.tags;
 	}
 
@@ -69,7 +70,7 @@ public class Message extends DomainEntity {
 		this.priority = priority;
 	}
 
-	public void setTags(final Set<String> tags) {
+	public void setTags(final Collection<String> tags) {
 		this.tags = tags;
 	}
 
@@ -77,7 +78,6 @@ public class Message extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 	private Actor			sender;
 	private Actor			recipient;
-	private MessageFolder	messageFolder;
 
 
 	@ManyToOne(optional = false)
@@ -96,12 +96,5 @@ public class Message extends DomainEntity {
 		this.recipient = recipient;
 	}
 
-	@ManyToOne(optional = false)
-	public MessageFolder getMessageFolder() {
-		return this.messageFolder;
-	}
-	public void setMessageFolder(final MessageFolder messageFolder) {
-		this.messageFolder = messageFolder;
-	}
 
 }

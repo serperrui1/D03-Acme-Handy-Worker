@@ -57,17 +57,17 @@ public class Section extends DomainEntity {
 		this.picture = picture;
 	}
 
-	// Relationships ----------------------------------------------------------
-	private Tutorial tutorial;
-
-	@Valid
-	@ManyToOne(optional = false)
-	public Tutorial getTutorial() {
-		return this.tutorial;
-	}
-
-	public void setTutorial(Tutorial tutorial) {
-		this.tutorial = tutorial;
-	}
+//	// Relationships ----------------------------------------------------------
+//	private Tutorial tutorial;
+//
+//
+//	@ManyToOne(optional = false)
+//	public Tutorial getTutorial() {
+//		return this.tutorial;
+//	}
+//
+//	public void setTutorial(Tutorial tutorial) {
+//		this.tutorial = tutorial;
+//	}
 
 }

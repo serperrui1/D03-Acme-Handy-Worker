@@ -7,12 +7,11 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -20,9 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Note extends DomainEntity {
 
 	private Date moment;
-	private String comment;
-	private Actor writter;
-	private Collection<String> comments;
+
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,35 +32,20 @@ public class Note extends DomainEntity {
 		this.moment = moment;
 	}
 
-	@NotBlank
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public Actor getWritter() {
-		return writter;
-	}
-
-	public void setWritter(Actor writter) {
-		this.writter = writter;
-	}
-
-	public Collection<String> getComments() {
-		return comments;
-	}
-
-	public void setComments(Collection<String> comments) {
-		this.comments = comments;
-	}
 
 	// Relationships ----------------------------------------------------------
 	private Report report;
+	private Collection<Comment> comments;
+	
+	@OneToMany
+	public Collection<Comment> getComments() {
+		return comments;
+	}
 
-	@Valid
+	public void setComments(Collection<Comment> comments) {
+		this.comments = comments;
+	}
+
 	@ManyToOne(optional = false)
 	public Report getReport() {
 		return this.report;

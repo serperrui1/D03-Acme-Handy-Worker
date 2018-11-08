@@ -1,4 +1,3 @@
-
 package domain;
 
 import java.util.Date;
@@ -10,22 +9,24 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class FixUpTask extends DomainEntity {
 
-	private String	ticker;
-	private Date	startMoment;
-	private Date	endMoment;
-	private String	description;
-	private String	addres;
-	private Double	maximumPrice;
-
+	private String ticker;
+	private Date startMoment;
+	private Date endMoment;
+	private String description;
+	private String addres;
+	private Double maximumPrice;
 
 	@NotBlank
 	@Column(unique = true)
@@ -38,12 +39,17 @@ public class FixUpTask extends DomainEntity {
 		this.ticker = ticker;
 	}
 
-	public void setDescription(final String description) {
-		this.description = description;
+	@NotBlank
+	public String getAddres() {
+		return this.addres;
 	}
 
 	public void setAddres(final String addres) {
 		this.addres = addres;
+	}
+
+	public Double getMaximumPrice() {
+		return this.maximumPrice;
 	}
 
 	public void setMaximumPrice(final Double maximumPrice) {
@@ -51,27 +57,26 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getStartMoment() {
 		return this.startMoment;
 	}
 
-	public Date getEndMoment() {
-		return this.endMoment;
-	}
-
-	@NotBlank
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setStartMoment(final Date startMoment) {
+	public void setStartMoment(Date startMoment) {
 		// if (this.getStartMoment().after(this.phase.getStartMoment()))
 		// throw new
 		// IllegalArgumentException("A phase cannot start before it's fix up task has started already");
 		this.startMoment = startMoment;
 	}
 
-	public void setEndMoment(final Date endMoment) {
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	public Date getEndMoment() {
+		return this.endMoment;
+	}
+
+	public void setEndMoment(Date endMoment) {
 		// if (this.phase.getEndMoment().after(this.getEndMoment()))
 		// throw new
 		// IllegalArgumentException("A phase cannot finish after it's fix up task is finished");
@@ -79,23 +84,20 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getAddres() {
-		return this.addres;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public Double getMaximumPrice() {
-		return this.maximumPrice;
+	public void setDescription(final String description) {
+		this.description = description;
 	}
-
 
 	// Relationships ----------------------------------------------------------
-	private Warranty	warranty;
-	private Customer	customer;
-	private WorkPlan	workPlan;
-	private Category	category;
-	private Finder		finder;
-	private Application	application;
-
+	private Warranty warranty;
+	private WorkPlan workPlan;
+	private Category category;
+	private Finder finder;
+	private Application application;
 
 	@ManyToOne(optional = false)
 	public Category getCategory() {
@@ -140,15 +142,6 @@ public class FixUpTask extends DomainEntity {
 
 	public void setWarranty(final Warranty warranty) {
 		this.warranty = warranty;
-	}
-
-	@ManyToOne
-	public Customer getCustomer() {
-		return this.customer;
-	}
-
-	public void setCustomer(final Customer customer) {
-		this.customer = customer;
 	}
 
 }
