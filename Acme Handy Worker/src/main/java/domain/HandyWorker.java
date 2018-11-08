@@ -33,8 +33,11 @@ public class HandyWorker extends Endorser {
 	}
 
 	@NotBlank
-	//TODO: default name
 	public String getMakeName() {
+		if (this.getMiddleName() == null)
+			this.makeName = this.getName() + " " + this.getSurname();
+		else
+			this.makeName = this.getName() + " " + this.getMiddleName() + " " + this.getSurname();
 		return this.makeName;
 	}
 

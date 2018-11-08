@@ -36,7 +36,7 @@ public class Application extends DomainEntity {
 		return this.moment;
 	}
 
-	@Pattern(regexp = "^(PENDING|ACEPTED|REJECTED)$")
+	@Pattern(regexp = "^(PENDING|ACCEPTED|REJECTED)$")
 	public String getStatus() {
 		return this.status;
 	}

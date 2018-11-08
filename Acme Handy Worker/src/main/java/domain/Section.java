@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
@@ -15,24 +16,20 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Section extends DomainEntity {
 
-	private Integer				id;
+	private Integer				sectionId;
 	private String				title;
 	private String				text;
 	private Collection<String>	picture;
 
 
-	/*
-	 * @Override
-	 * 
-	 * @Column(unique = true)
-	 * public int getId() {
-	 * return this.id;
-	 * }
-	 * 
-	 * public void setId(final Integer id) {
-	 * this.id = id;
-	 * }
-	 */
+	@Column(unique = true)
+	public int getSectionId() {
+		return this.sectionId;
+	}
+
+	public void setSectionId(final Integer sectionId) {
+		this.sectionId = sectionId;
+	}
 
 	@NotBlank
 	public String getTitle() {

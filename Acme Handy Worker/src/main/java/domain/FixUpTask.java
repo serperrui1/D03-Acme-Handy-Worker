@@ -25,7 +25,7 @@ public class FixUpTask extends DomainEntity {
 	private Date	startMoment;
 	private Date	endMoment;
 	private String	description;
-	private String	addres;
+	private String	address;
 	private Double	maximumPrice;
 
 
@@ -41,12 +41,12 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getAddres() {
-		return this.addres;
+	public String getAddress() {
+		return this.address;
 	}
 
-	public void setAddres(final String addres) {
-		this.addres = addres;
+	public void setAddress(final String address) {
+		this.address = address;
 	}
 
 	public Double getMaximumPrice() {

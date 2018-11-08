@@ -42,7 +42,7 @@ public class MessageFolder extends DomainEntity {
 	private Collection<Message>	messages;
 
 
-	@OneToMany()
+	@OneToMany
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}
@@ -50,7 +50,5 @@ public class MessageFolder extends DomainEntity {
 	public void setMessages(final Collection<Message> messages) {
 		this.messages = messages;
 	}
-
-
 
 }
