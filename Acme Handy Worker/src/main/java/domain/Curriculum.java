@@ -59,16 +59,16 @@ public class Curriculum extends DomainEntity {
 		this.personalRecord = personalRecord;
 	}
 
-	@OneToMany()
+	@OneToMany
 	public Collection<ProfessionalRecord> getProfessionalRecords() {
 		return this.professionalRecords;
 	}
 
-	public void setProffesionalRecords(final Collection<ProfessionalRecord> professionalRecords) {
+	public void setProfessionalRecords(final Collection<ProfessionalRecord> professionalRecords) {
 		this.professionalRecords = professionalRecords;
 	}
 
-	@OneToMany()
+	@OneToMany
 	public Collection<MiscellaneousRecord> getMiscellaneousRecords() {
 		return this.miscellaneousRecords;
 	}
@@ -77,7 +77,7 @@ public class Curriculum extends DomainEntity {
 		this.miscellaneousRecords = miscellaneousRecords;
 	}
 
-	@OneToMany()
+	@OneToMany
 	public Collection<EducationRecord> getEducationRecords() {
 		return this.educationRecords;
 	}
@@ -86,7 +86,7 @@ public class Curriculum extends DomainEntity {
 		this.educationRecords = educationRecords;
 	}
 
-	@OneToMany()
+	@OneToMany
 	public Collection<EndorserRecord> getEndorserRecords() {
 		return this.endorserRecords;
 	}

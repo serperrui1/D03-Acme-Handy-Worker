@@ -4,9 +4,9 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -21,10 +21,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Message extends DomainEntity {
 
-	private Date		moment;
-	private String		subject;
-	private String		body;
-	private String		priority;
+	private Date				moment;
+	private String				subject;
+	private String				body;
+	private String				priority;
 	private Collection<String>	tags;
 
 
@@ -50,6 +50,7 @@ public class Message extends DomainEntity {
 		return this.priority;
 	}
 
+	@ElementCollection
 	public Collection<String> getTags() {
 		return this.tags;
 	}
@@ -76,8 +77,8 @@ public class Message extends DomainEntity {
 
 
 	// Relationships ----------------------------------------------------------
-	private Actor			sender;
-	private Actor			recipient;
+	private Actor	sender;
+	private Actor	recipient;
 
 
 	@ManyToOne(optional = false)
@@ -95,6 +96,5 @@ public class Message extends DomainEntity {
 	public void setRecipient(final Actor recipient) {
 		this.recipient = recipient;
 	}
-
 
 }

@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -25,7 +26,8 @@ public class Application extends DomainEntity {
 	private String				status;
 	private Double				price;
 	private Collection<String>	comments;
-	private String statusColor;
+	private String				statusColor;
+
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
@@ -56,6 +58,7 @@ public class Application extends DomainEntity {
 		this.price = price;
 	}
 
+	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
 	}
@@ -67,16 +70,15 @@ public class Application extends DomainEntity {
 	//TODO: Propiedad derivada
 	@Transient
 	public String getStatusColor() {
-		return statusColor;
+		return this.statusColor;
 	}
 
-	public void setStatusColor(String statusColor) {
+	public void setStatusColor(final String statusColor) {
 		this.statusColor = statusColor;
 	}
 
+
 	//Relationships
-
-
 
 	private FixUpTask	fixUpTask;
 	private HandyWorker	handyworker;

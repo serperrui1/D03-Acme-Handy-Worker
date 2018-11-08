@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.Email;
@@ -15,11 +16,11 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class EndorserRecord extends DomainEntity {
 
-	private String	fullName;
-	private String	email;
-	private String	phone;
-	private String	linkedIn;
-	private Collection<String> 	comments;
+	private String				fullName;
+	private String				email;
+	private String				phone;
+	private String				linkedIn;
+	private Collection<String>	comments;
 
 
 	@NotBlank
@@ -60,12 +61,12 @@ public class EndorserRecord extends DomainEntity {
 		this.linkedIn = linkedIn;
 	}
 
-	//@ElementCollection
+	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
 	}
 
-	public void setComments(Collection<String> comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
 

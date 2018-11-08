@@ -62,10 +62,10 @@ public class Complaint extends DomainEntity {
 
 	@Transient
 	public Integer getAttachments() {
-		attachments  = 0;
+		this.attachments = 0;
 		for (final Report r : this.getReports())
-			attachments = attachments + r.getAttachments().size();
-		return attachments;
+			this.attachments = this.attachments + r.getAttachments().size();
+		return this.attachments;
 	}
 
 	public void setAttachments(final Integer attachments) {
@@ -97,7 +97,7 @@ public class Complaint extends DomainEntity {
 		this.fixUpTask = fixUpTask;
 	}
 
-	@OneToMany
+	@OneToMany(mappedBy = "complaint")
 	public Collection<Report> getReports() {
 		return this.reports;
 	}

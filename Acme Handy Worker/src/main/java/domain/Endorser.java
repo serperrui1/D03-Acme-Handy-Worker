@@ -1,30 +1,36 @@
 
 package domain;
 
+import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Endorser extends Actor {
 
-	private Endorsement	made;
-	private Endorsement	received;
+	private Collection<Endorsement>	made;
+	private Collection<Endorsement>	received;
 
 
 	@OneToMany(mappedBy = "endorser")
-	public Endorsement getMade() {
+	public Collection<Endorsement> getMade() {
 		return this.made;
 	}
 
-	public void setMade( Endorsement made) {
+	public void setMade(final Collection<Endorsement> made) {
 		this.made = made;
 	}
 
 	@OneToMany(mappedBy = "recipient")
-	public Endorsement getReceived() {
+	public Collection<Endorsement> getReceived() {
 		return this.received;
 	}
 
-	public void setReceived(final Endorsement received) {
+	public void setReceived(final Collection<Endorsement> received) {
 		this.received = received;
 	}
 

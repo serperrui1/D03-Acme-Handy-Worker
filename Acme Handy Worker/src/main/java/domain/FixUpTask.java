@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Date;
@@ -6,7 +7,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -21,12 +21,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class FixUpTask extends DomainEntity {
 
-	private String ticker;
-	private Date startMoment;
-	private Date endMoment;
-	private String description;
-	private String addres;
-	private Double maximumPrice;
+	private String	ticker;
+	private Date	startMoment;
+	private Date	endMoment;
+	private String	description;
+	private String	addres;
+	private Double	maximumPrice;
+
 
 	@NotBlank
 	@Column(unique = true)
@@ -63,7 +64,7 @@ public class FixUpTask extends DomainEntity {
 		return this.startMoment;
 	}
 
-	public void setStartMoment(Date startMoment) {
+	public void setStartMoment(final Date startMoment) {
 		// if (this.getStartMoment().after(this.phase.getStartMoment()))
 		// throw new
 		// IllegalArgumentException("A phase cannot start before it's fix up task has started already");
@@ -76,7 +77,7 @@ public class FixUpTask extends DomainEntity {
 		return this.endMoment;
 	}
 
-	public void setEndMoment(Date endMoment) {
+	public void setEndMoment(final Date endMoment) {
 		// if (this.phase.getEndMoment().after(this.getEndMoment()))
 		// throw new
 		// IllegalArgumentException("A phase cannot finish after it's fix up task is finished");
@@ -92,12 +93,14 @@ public class FixUpTask extends DomainEntity {
 		this.description = description;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private Warranty warranty;
-	private WorkPlan workPlan;
-	private Category category;
-	private Finder finder;
-	private Application application;
+	private Warranty	warranty;
+	private WorkPlan	workPlan;
+	private Category	category;
+	private Application	application;
+	private Customer	customer;
+
 
 	@ManyToOne(optional = false)
 	public Category getCategory() {
@@ -106,15 +109,6 @@ public class FixUpTask extends DomainEntity {
 
 	public void setCategory(final Category category) {
 		this.category = category;
-	}
-
-	@ManyToMany
-	public Finder getFinder() {
-		return this.finder;
-	}
-
-	public void setFinder(final Finder finder) {
-		this.finder = finder;
 	}
 
 	@OneToOne(optional = false)
@@ -135,13 +129,22 @@ public class FixUpTask extends DomainEntity {
 		this.workPlan = workPlan;
 	}
 
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	public Warranty getWarranty() {
 		return this.warranty;
 	}
 
 	public void setWarranty(final Warranty warranty) {
 		this.warranty = warranty;
+	}
+
+	@ManyToOne(optional = false)
+	public Customer getCustomer() {
+		return this.customer;
+	}
+
+	public void setCustomer(final Customer customer) {
+		this.customer = customer;
 	}
 
 }
