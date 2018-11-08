@@ -191,20 +191,23 @@
 		<property name="phone" value="622545487" />
 		<property name="address" value="Calle caminiviejo nº16 , Tomares, Sevilla" />
 		<property name="profiles">
-			<list>	
+			<list>
+				<ref bean="perfil1" />
+				<ref bean="perfil2" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount8" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder1" />
+				<ref bean="messagefolder2" />
+				<ref bean="messagefolder3" />
+				<ref bean="messagefolder4" />
 			</list>
 		</property>
 		<property name="sentMessages">
 			<list>
+			<ref bean="message1" />
 			</list>
 		</property>		
 		<property name="receivedMessages">
@@ -226,15 +229,17 @@
 		<property name="address" value="Calle Lucernas nº22 , Carmona, Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil3" />
+				<ref bean="perfil4" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount9" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder5" />
+				<ref bean="messagefolder6" />
+				<ref bean="messagefolder7" />
+				<ref bean="messagefolder8" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -260,15 +265,17 @@
 		<property name="address" value="Calle Tornados nº8 , Tomares, Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil5" />
+				<ref bean="perfil6" />			
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount10" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder9" />
+				<ref bean="messagefolder10" />
+				<ref bean="messagefolder11" />
+				<ref bean="messagefolder12" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -295,15 +302,18 @@
 		<property name="address" value="Calle de Los Austrias nº8 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil7" />
+				<ref bean="perfil8" />
+				<ref bean="perfil9" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount5" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder13" />
+				<ref bean="messagefolder14" />
+				<ref bean="messagefolder15" />
+				<ref bean="messagefolder16" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -312,6 +322,7 @@
 		</property>		
 		<property name="receivedMessages">
 			<list>
+			<ref bean="messagebox1" />
 			</list>
 		</property>
 		<property name="score" value="1.0" />
@@ -327,15 +338,17 @@
 		<property name="address" value="Calle Santa Eulalia nº4 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil10" />
+				<ref bean="perfil11" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount6" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder17" />
+				<ref bean="messagefolder18" />
+				<ref bean="messagefolder19" />
+				<ref bean="messagefolder20" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -359,15 +372,18 @@
 		<property name="address" value="Calle Tornado nº5 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil12" />
+				<ref bean="perfil13" />
+				<ref bean="perfil14" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount7" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder21" />
+				<ref bean="messagefolder22" />
+				<ref bean="messagefolder23" />
+				<ref bean="messagefolder24" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -393,15 +409,16 @@
 		<property name="address" value="Calle Marqués de KingPing nº3 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil15" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount1" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder25" />
+				<ref bean="messagefolder26" />
+				<ref bean="messagefolder27" />
+				<ref bean="messagefolder28" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -426,15 +443,17 @@
 		<property name="address" value="Calle Lucifer nº5 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil16" />
+				<ref bean="perfil17" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount11" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder29" />
+				<ref bean="messagefolder30" />
+				<ref bean="messagefolder31" />
+				<ref bean="messagefolder32" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -457,15 +476,17 @@
 		<property name="address" value="Calle Llamas nº3 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil18" />
+				<ref bean="perfil19" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount12" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder33" />
+				<ref bean="messagefolder34" />
+				<ref bean="messagefolder35" />
+				<ref bean="messagefolder36" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -488,15 +509,16 @@
 		<property name="address" value="Calle Riverdale nº2 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil20" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount13" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder37" />
+				<ref bean="messagefolder38" />
+				<ref bean="messagefolder39" />
+				<ref bean="messagefolder40" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -520,16 +542,18 @@
 		<property name="phone" value="655270031" />
 		<property name="address" value="Calle Borbones nº9 , Sevilla" />
 		<property name="profiles">
-			<list>	
+			<list>
+				<ref bean="perfil21" />
+				<ref bean="perfil22" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount2" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder41" />
+				<ref bean="messagefolder42" />
+				<ref bean="messagefolder43" />
+				<ref bean="messagefolder44" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -552,15 +576,16 @@
 		<property name="address" value="Calle Croquetas nº9 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil23" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount3" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder45" />
+				<ref bean="messagefolder46" />
+				<ref bean="messagefolder47" />
+				<ref bean="messagefolder48" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -583,15 +608,17 @@
 		<property name="address" value="Calle Ortigas nº9 , Sevilla" />
 		<property name="profiles">
 			<list>	
+				<ref bean="perfil24" />
+				<ref bean="perfil25" />
 			</list>
 		</property>
 		<property name="userAccount" ref="userAccount4" />
 		<property name="messageFolder">
 			<list>
-				<ref bean="messagebox1" />
-				<ref bean="messagebox2" />
-				<ref bean="messagebox3" />
-				<ref bean="messagebox4" />
+				<ref bean="messagefolder49" />
+				<ref bean="messagefolder50" />
+				<ref bean="messagefolder51" />
+				<ref bean="messagefolder52" />
 			</list>
 		</property>
 		<property name="sentMessages">
@@ -721,6 +748,16 @@
 		<property name="nick" value="nick12" />
 		<property name="nameSocialNetwork" value="Facebook" />
 		<property name="link" value="https://www.facebook.com/nick12" />
+	</bean>
+		<bean class="domain.Profile" id="profile24">
+		<property name="nick" value="nick11" />
+		<property name="nameSocialNetwork" value="Twitter" />
+		<property name="link" value="https://www.twitter.com/nick13" />
+	</bean>
+		<bean class="domain.Profile" id="profile25">
+		<property name="nick" value="nick12" />
+		<property name="nameSocialNetwork" value="Facebook" />
+		<property name="link" value="https://www.facebook.com/nick13" />
 	</bean>
 	
 
@@ -1086,7 +1123,7 @@
   	
 
 		<!-- MESSAGE FOLDERS -->
-		<!-- Folders 1-->
+		<!-- HANDYWORKER 1 Folder-->
 
 	<bean class="domain.MessageFolder" id="messagefolder1">
 		<property name="name" value="in box" />
@@ -1101,6 +1138,7 @@
 		<property name="modifiable" value="false" />
 		<property name="messages">
 			<list>
+			<ref bean="message" />
 			</list>
 		</property>
 	</bean>
@@ -1121,7 +1159,7 @@
 		</property>
 	</bean>
 	
-	<!-- Folders 2-->
+	<!-- HANDYWORKER 2 Folder -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder5">
 		<property name="name" value="in box" />
@@ -1156,7 +1194,7 @@
 		</property>
 	</bean>
 	
-		<!-- Folders 3-->
+		<!-- HANDYWORKER 3 Folder -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder9">
 		<property name="name" value="in box" />
@@ -1190,7 +1228,7 @@
 			</list>
 		</property>
 	</bean>
-		<!-- Folders 4-->
+		<!-- CUSTOMER 1 Folder -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder13">
 		<property name="name" value="in box" />
@@ -1224,7 +1262,7 @@
 			</list>
 		</property>
 	</bean>	
-			<!-- Folders 5-->
+			<!-- CUSTOMER 2 Folder-->
 
 	<bean class="domain.MessageFolder" id="messagefolder17">
 		<property name="name" value="in box" />
@@ -1259,7 +1297,7 @@
 		</property>
 	</bean>
 	
-	<!-- Folders 6-->
+	<!-- CUSTOMER 3 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder21">
 		<property name="name" value="in box" />
@@ -1294,7 +1332,7 @@
 		</property>
 	</bean>
 	
-		<!-- Folders 7-->
+		<!-- ADMININISTRATOR 1 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder25">
 		<property name="name" value="in box" />
@@ -1328,7 +1366,7 @@
 			</list>
 		</property>
 	</bean>
-		<!-- Folders 8-->
+		<!-- SPONSOR 1 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder29">
 		<property name="name" value="in box" />
@@ -1362,7 +1400,7 @@
 			</list>
 		</property>
 	</bean>	
-			<!-- Folders 9-->
+			<!-- SPONSOR 2 Folders -->
 
 	<bean class="domain.MessageFolder" id="messagefolder33">
 		<property name="name" value="in box" />
@@ -1397,7 +1435,7 @@
 		</property>
 	</bean>
 	
-	<!-- Folders 10-->
+	<!-- SPONSOR 3 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder37">
 		<property name="name" value="in box" />
@@ -1432,7 +1470,7 @@
 		</property>
 	</bean>
 	
-		<!-- Folders 11-->
+		<!-- REFEREE 1 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder41">
 		<property name="name" value="in box" />
@@ -1466,7 +1504,7 @@
 			</list>
 		</property>
 	</bean>
-		<!-- Folders 12-->
+		<!--REFEREE 2 Folders -->
 	
 		<bean class="domain.MessageFolder" id="messagefolder45">
 		<property name="name" value="in box" />
@@ -1500,7 +1538,7 @@
 			</list>
 		</property>
 	</bean>	
-			<!-- Folders 13-->
+			<!-- REFEREE 3 Folders -->
 
 	<bean class="domain.MessageFolder" id="messagefolder49">
 		<property name="name" value="in box" />
@@ -1534,5 +1572,22 @@
 			</list>
 		</property>
 	</bean>
-
+	<!--  FIX-UP TASK -->
+	
+	<bean class="domain.FixUpTask" id="task1">
+		<property name="ticker" value="171210-3SD7aS" />
+		<property name="startMoment" value="10/12/2017 12:00" />
+		<property name="endMoment" value="23/12/2017 12:00" />
+		<property name="description" value="desscripcion del fix up task 1" />
+		<property name="addres" value="address1" />
+		<property name="maximunPrice" value="3000" />
+		<property name="warranty">
+			<list>
+			</list>
+		</property>
+		<property name="workplan" ref="workplan1" />
+		<property name="category" ref="category1" />
+		<property name="finder" ref="finder1" />
+		<property name="application" ref="application1" />
+	</bean>
 </beans>
