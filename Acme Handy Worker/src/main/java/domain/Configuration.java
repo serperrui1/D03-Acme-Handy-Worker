@@ -61,7 +61,6 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	@Column(unique = true)
 	public String getSpamWord() {
 		return spamWord;
 	}
@@ -71,6 +70,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@URL
+	@NotBlank
 	public String getBanner() {
 		return banner;
 	}
@@ -99,7 +99,6 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	@Column(unique = true)
 	public String getLeafCategory() {
 		return leafCategory;
 	}
@@ -109,7 +108,6 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	@Column(unique = true)
 	public String getPositiveWords() {
 		return positiveWords;
 	}
@@ -119,7 +117,6 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	@Column(unique = true)
 	public String getNegativeWords() {
 		return negativeWords;
 	}

@@ -27,19 +27,19 @@ public class Finder extends DomainEntity {
 	public String getKeyword() {
 		return this.keyword;
 	}
-	public void setKeyword(final String keyword) {
+	public void setKeyword( String keyword) {
 		this.keyword = keyword;
 	}
 	public Double getMinPrice() {
 		return this.minPrice;
 	}
-	public void setMinPrice(final Double minPrice) {
+	public void setMinPrice( Double minPrice) {
 		this.minPrice = minPrice;
 	}
 	public Double getMaxPrice() {
 		return this.maxPrice;
 	}
-	public void setMaxPrice(final Double maxPrice) {
+	public void setMaxPrice( Double maxPrice) {
 		this.maxPrice = maxPrice;
 	}
 
@@ -74,7 +74,7 @@ public class Finder extends DomainEntity {
 		return this.warranty;
 	}
 
-	public void setWarranty(final Warranty warranty) {
+	public void setWarranty( Warranty warranty) {
 		this.warranty = warranty;
 	}
 
@@ -83,7 +83,7 @@ public class Finder extends DomainEntity {
 		return this.category;
 	}
 
-	public void setCategory(final Category category) {
+	public void setCategory( Category category) {
 		this.category = category;
 	}
 
@@ -91,7 +91,7 @@ public class Finder extends DomainEntity {
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
 	}
-	public void setFixUpTask(final FixUpTask fixUpTask) {
+	public void setFixUpTask( FixUpTask fixUpTask) {
 		this.fixUpTask = fixUpTask;
 	}
 

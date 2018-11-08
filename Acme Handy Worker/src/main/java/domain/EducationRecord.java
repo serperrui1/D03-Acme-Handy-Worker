@@ -6,7 +6,6 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -53,12 +52,12 @@ public class EducationRecord extends DomainEntity {
 		this.link = link;
 	}
 
-	@ElementCollection
+	//@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
 	}
 
-	public void setComments(final Collection<String> comments) {
+	public void setComments( Collection<String> comments) {
 		this.comments = comments;
 	}
 }

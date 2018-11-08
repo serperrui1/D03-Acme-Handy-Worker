@@ -1,7 +1,8 @@
 
 package domain;
 
-import javax.persistence.ManyToOne;
+
+import javax.persistence.OneToMany;
 
 public class Endorser extends Actor {
 
@@ -9,16 +10,16 @@ public class Endorser extends Actor {
 	private Endorsement	received;
 
 
-	@ManyToOne(optional = false)
+	@OneToMany(mappedBy = "endorser")
 	public Endorsement getMade() {
 		return this.made;
 	}
 
-	public void setMade(final Endorsement made) {
+	public void setMade( Endorsement made) {
 		this.made = made;
 	}
 
-	@ManyToOne(optional = false)
+	@OneToMany(mappedBy = "recipient")
 	public Endorsement getReceived() {
 		return this.received;
 	}

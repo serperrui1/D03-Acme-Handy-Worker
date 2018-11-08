@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
@@ -19,6 +20,7 @@ public class Sponsorship extends DomainEntity {
 
 
 	@URL
+	@NotBlank
 	public String getBanner() {
 		return this.banner;
 	}
@@ -28,6 +30,7 @@ public class Sponsorship extends DomainEntity {
 	}
 
 	@URL
+	@NotBlank
 	public String getTargetPage() {
 		return this.targetPage;
 	}
@@ -41,7 +44,7 @@ public class Sponsorship extends DomainEntity {
 		return this.creditCard;
 	}
 
-	public void setCreditCard(final CreditCard creditCard) {
+	public void setCreditCard( CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
 
@@ -51,13 +54,13 @@ public class Sponsorship extends DomainEntity {
 	private Tutorial	tutorial;
 
 
-	@Valid
+
 	@ManyToOne(optional = false)
 	public Sponsor getSponsor() {
 		return this.sponsor;
 	}
 
-	public void setSponsor(final Sponsor sponsor) {
+	public void setSponsor( Sponsor sponsor) {
 		this.sponsor = sponsor;
 	}
 
@@ -66,7 +69,7 @@ public class Sponsorship extends DomainEntity {
 		return this.tutorial;
 	}
 
-	public void setTutorial(final Tutorial tutorial) {
+	public void setTutorial( Tutorial tutorial) {
 		this.tutorial = tutorial;
 	}
 

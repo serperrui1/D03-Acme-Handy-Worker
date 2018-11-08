@@ -69,22 +69,22 @@ public class Tutorial extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	private HandyWorker			handyWorker;
+	//private HandyWorker			handyWorker;
 	private Collection<Section>	sections;
 	private Sponsorship			sponsorship;
 
 
-	@Valid
-	@ManyToOne(optional = false)
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
 
-	public void setHandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
+//	@ManyToOne(optional = false)
+//	public HandyWorker getHandyWorker() {
+//		return this.handyWorker;
+//	}
+//
+//	public void setHandyWorker(final HandyWorker handyWorker) {
+//		this.handyWorker = handyWorker;
+//	}
 
-	@Valid
+
 	@OneToMany
 	public Collection<Section> getSections() {
 		return this.sections;

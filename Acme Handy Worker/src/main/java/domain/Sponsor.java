@@ -17,7 +17,6 @@ public class Sponsor extends Actor {
 	private Collection<Sponsorship>	sponsorships;
 
 
-	@Valid
 	@OneToMany(mappedBy = "sponsor")
 	public Collection<Sponsorship> getSponsorship() {
 		return this.sponsorships;

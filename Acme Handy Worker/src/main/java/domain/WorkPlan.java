@@ -39,7 +39,7 @@ public class WorkPlan extends DomainEntity {
 		this.phases = phases;
 	}
 
-	@ManyToOne(optional = false)
+	@OneToOne(optional = false)
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}

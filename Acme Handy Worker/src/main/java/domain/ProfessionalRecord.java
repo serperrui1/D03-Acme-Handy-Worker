@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -24,7 +25,7 @@ public class ProfessionalRecord extends DomainEntity {
 	private Date	endPeriod;
 	private String	role;
 	private String	link;
-	private String	comments;
+	private Collection<String>	comments;
 
 
 	@NotBlank
@@ -32,7 +33,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.nameCompany;
 	}
 
-	public void setNameCompany(final String nameCompany) {
+	public void setNameCompany( String nameCompany) {
 		this.nameCompany = nameCompany;
 	}
 
@@ -43,7 +44,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.startPeriod;
 	}
 
-	public void setStartPeriod(final Date startPeriod) {
+	public void setStartPeriod( Date startPeriod) {
 		this.startPeriod = startPeriod;
 	}
 
@@ -53,7 +54,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.endPeriod;
 	}
 
-	public void setEndPeriod(final Date endPeriod) {
+	public void setEndPeriod( Date endPeriod) {
 		this.endPeriod = endPeriod;
 	}
 
@@ -62,7 +63,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.role;
 	}
 
-	public void setRole(final String role) {
+	public void setRole( String role) {
 		this.role = role;
 	}
 
@@ -71,16 +72,16 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.link;
 	}
 
-	public void setLink(final String link) {
+	public void setLink( String link) {
 		this.link = link;
 	}
 
 	@ElementCollection
-	public String getComments() {
+	public Collection<String> getComments() {
 		return this.comments;
 	}
 
-	public void setComments(final String comments) {
+	public void setComments(Collection<String> comments) {
 		this.comments = comments;
 	}
 
