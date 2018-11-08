@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -18,31 +19,32 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Note extends DomainEntity {
 
-	private Date moment;
+	private Date	moment;
 
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
-		return moment;
+		return this.moment;
 	}
 
-	public void setMoment(Date moment) {
+	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
 
 
 	// Relationships ----------------------------------------------------------
-	private Report report;
-	private Collection<Comment> comments;
-	
+	private Report				report;
+	private Collection<Comment>	comments;
+
+
 	@OneToMany
 	public Collection<Comment> getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(Collection<Comment> comments) {
+	public void setComments(final Collection<Comment> comments) {
 		this.comments = comments;
 	}
 
@@ -51,7 +53,7 @@ public class Note extends DomainEntity {
 		return this.report;
 	}
 
-	public void setReport(Report report) {
+	public void setReport(final Report report) {
 		this.report = report;
 	}
 }

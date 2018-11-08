@@ -1,13 +1,12 @@
+
 package domain;
 
 import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -16,58 +15,51 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Section extends DomainEntity {
 
-	private Integer id;
-	private String title;
-	private String text;
-	private Collection<String> picture;
+	private Integer				id;
+	private String				title;
+	private String				text;
+	private Collection<String>	picture;
 
-	@Column(unique = true)
-	public int getId() {
-		return id;
-	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	/*
+	 * @Override
+	 * 
+	 * @Column(unique = true)
+	 * public int getId() {
+	 * return this.id;
+	 * }
+	 * 
+	 * public void setId(final Integer id) {
+	 * this.id = id;
+	 * }
+	 */
 
 	@NotBlank
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(final String title) {
 		this.title = title;
 	}
 
 	@NotBlank
 	public String getText() {
-		return text;
+		return this.text;
 	}
 
-	public void setText(String text) {
+	public void setText(final String text) {
 		this.text = text;
 	}
 
 	@URL
+	@ElementCollection
 	public Collection<String> getPicture() {
-		return picture;
+		return this.picture;
 	}
 
-	public void setPicture(Collection<String> picture) {
+	public void setPicture(final Collection<String> picture) {
 		this.picture = picture;
 	}
-
-//	// Relationships ----------------------------------------------------------
-//	private Tutorial tutorial;
-//
-//
-//	@ManyToOne(optional = false)
-//	public Tutorial getTutorial() {
-//		return this.tutorial;
-//	}
-//
-//	public void setTutorial(Tutorial tutorial) {
-//		this.tutorial = tutorial;
-//	}
 
 }

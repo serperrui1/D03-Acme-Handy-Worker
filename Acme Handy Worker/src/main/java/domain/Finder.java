@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -27,19 +28,19 @@ public class Finder extends DomainEntity {
 	public String getKeyword() {
 		return this.keyword;
 	}
-	public void setKeyword( String keyword) {
+	public void setKeyword(final String keyword) {
 		this.keyword = keyword;
 	}
 	public Double getMinPrice() {
 		return this.minPrice;
 	}
-	public void setMinPrice( Double minPrice) {
+	public void setMinPrice(final Double minPrice) {
 		this.minPrice = minPrice;
 	}
 	public Double getMaxPrice() {
 		return this.maxPrice;
 	}
-	public void setMaxPrice( Double maxPrice) {
+	public void setMaxPrice(final Double maxPrice) {
 		this.maxPrice = maxPrice;
 	}
 
@@ -64,9 +65,9 @@ public class Finder extends DomainEntity {
 
 	//Relationships
 
-	private Warranty	warranty;
-	private Category	category;
-	private FixUpTask	fixUpTask;
+	private Warranty				warranty;
+	private Category				category;
+	private Collection<FixUpTask>	fixUpTasks;
 
 
 	@OneToOne(optional = true)
@@ -74,7 +75,7 @@ public class Finder extends DomainEntity {
 		return this.warranty;
 	}
 
-	public void setWarranty( Warranty warranty) {
+	public void setWarranty(final Warranty warranty) {
 		this.warranty = warranty;
 	}
 
@@ -83,16 +84,16 @@ public class Finder extends DomainEntity {
 		return this.category;
 	}
 
-	public void setCategory( Category category) {
+	public void setCategory(final Category category) {
 		this.category = category;
 	}
 
 	@ManyToMany
-	public FixUpTask getFixUpTask() {
-		return this.fixUpTask;
+	public Collection<FixUpTask> getFixUpTasks() {
+		return this.fixUpTasks;
 	}
-	public void setFixUpTask( FixUpTask fixUpTask) {
-		this.fixUpTask = fixUpTask;
+	public void setFixUpTasks(final Collection<FixUpTask> fixUpTasks) {
+		this.fixUpTasks = fixUpTasks;
 	}
 
 }

@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -16,7 +17,8 @@ import org.hibernate.validator.constraints.Range;
 @Access(AccessType.PROPERTY)
 public class Customer extends Endorser {
 
-	private Double score;
+	private Double	score;
+
 
 	@Transient
 	// TODO: atributo derivado
@@ -25,26 +27,28 @@ public class Customer extends Endorser {
 		return this.score;
 	}
 
-	public void setScore( Double score) {
+	public void setScore(final Double score) {
 		this.score = score;
 	}
 
+
 	// Relationships ----------------------------------------------------------
 
-	private Collection<Complaint> complaints;
-	private Collection<FixUpTask> fixUpTasks;
-	private Collection<Comment> comments;
+	private Collection<Complaint>	complaints;
+	private Collection<FixUpTask>	fixUpTasks;
+	private Collection<Comment>		comments;
+
 
 	@OneToMany(mappedBy = "customer")
 	public Collection<FixUpTask> getFixUpTasks() {
 		return this.fixUpTasks;
 	}
 
-	public void setFixUpTasks(Collection<FixUpTask> fixUpTasks) {
+	public void setFixUpTasks(final Collection<FixUpTask> fixUpTasks) {
 		this.fixUpTasks = fixUpTasks;
 	}
 
-	public void setComplaints(Collection<Complaint> complaints) {
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
 	}
 
@@ -55,10 +59,10 @@ public class Customer extends Endorser {
 
 	@OneToMany(mappedBy = "customer")
 	public Collection<Comment> getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(Collection<Comment> comments) {
+	public void setComments(final Collection<Comment> comments) {
 		this.comments = comments;
 	}
 

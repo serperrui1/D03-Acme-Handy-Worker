@@ -38,7 +38,7 @@ public class MiscellaneousRecord extends DomainEntity {
 		this.link = link;
 	}
 
-	//@ElementCollection
+	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
 	}

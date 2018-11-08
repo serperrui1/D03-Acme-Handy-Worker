@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -12,16 +13,16 @@ import javax.persistence.OneToMany;
 public class Referee extends Actor {
 
 	// Relationships ----------------------------------------------------------
-	private Collection<Report> reports;
-	private Collection<Comment> comments;
-	
-	
-	@OneToMany
+	private Collection<Report>	reports;
+	private Collection<Comment>	comments;
+
+
+	@OneToMany(mappedBy = "referee")
 	public Collection<Comment> getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(Collection<Comment> comments) {
+	public void setComments(final Collection<Comment> comments) {
 		this.comments = comments;
 	}
 
@@ -30,7 +31,7 @@ public class Referee extends Actor {
 		return this.reports;
 	}
 
-	public void setReports(Collection<Report> Report) {
+	public void setReports(final Collection<Report> Report) {
 		this.reports = Report;
 	}
 }

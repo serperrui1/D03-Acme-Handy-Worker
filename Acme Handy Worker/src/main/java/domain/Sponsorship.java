@@ -44,33 +44,32 @@ public class Sponsorship extends DomainEntity {
 		return this.creditCard;
 	}
 
-	public void setCreditCard( CreditCard creditCard) {
+	public void setCreditCard(final CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
 
 
 	// Relationships ----------------------------------------------------------
-	private Sponsor		sponsor;
 	private Tutorial	tutorial;
+	private Sponsor		sponsor;
 
-
-
-	@ManyToOne(optional = false)
-	public Sponsor getSponsor() {
-		return this.sponsor;
-	}
-
-	public void setSponsor( Sponsor sponsor) {
-		this.sponsor = sponsor;
-	}
 
 	@ManyToOne(optional = false)
 	public Tutorial getTutorial() {
 		return this.tutorial;
 	}
 
-	public void setTutorial( Tutorial tutorial) {
+	public void setTutorial(final Tutorial tutorial) {
 		this.tutorial = tutorial;
+	}
+
+	@ManyToOne(optional = false)
+	public Sponsor getSponsor() {
+		return this.sponsor;
+	}
+
+	public void setSponsor(final Sponsor sponsor) {
+		this.sponsor = sponsor;
 	}
 
 }

@@ -22,7 +22,7 @@ public class Profile extends DomainEntity {
 		return this.nick;
 	}
 
-	public void setNick( String nick) {
+	public void setNick(final String nick) {
 		this.nick = nick;
 	}
 	@NotBlank
@@ -30,7 +30,7 @@ public class Profile extends DomainEntity {
 		return this.nameSocialNetwork;
 	}
 
-	public void setNameSocialNetwork( String nameSocialNetwork) {
+	public void setNameSocialNetwork(final String nameSocialNetwork) {
 		this.nameSocialNetwork = nameSocialNetwork;
 	}
 	@NotBlank
@@ -42,20 +42,5 @@ public class Profile extends DomainEntity {
 	public void setLink(final String link) {
 		this.link = link;
 	}
-
-
-//	Relationships
-//
-//	private Actor	actor;
-//
-//
-//	@ManyToOne(optional = false)
-//	public Actor getActor() {
-//		return this.actor;
-//	}
-//
-//	public void setActor(final Actor actor) {
-//		this.actor = actor;
-//	}
 
 }

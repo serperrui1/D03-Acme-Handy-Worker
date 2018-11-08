@@ -1,53 +1,63 @@
+
 package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity {
-	private Collection<String> comments;
 
+	private Collection<String>	comments;
+
+
+	@ElementCollection
 	public Collection<String> getComments() {
-		return comments;
+		return this.comments;
 	}
 
-	public void setComments(Collection<String> comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
 
+
 	// Relationships
 
-	private Customer customer;
-	private HandyWorker handyWorker;
-	private Referee referee;
+	private Customer	customer;
+	private HandyWorker	handyWorker;
+	private Referee		referee;
 
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public Customer getCustomer() {
-		return customer;
+		return this.customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(final Customer customer) {
 		this.customer = customer;
 	}
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public HandyWorker getHandyWorker() {
-		return handyWorker;
+		return this.handyWorker;
 	}
 
-	public void setHandyWorker(HandyWorker handyWorker) {
+	public void setHandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public Referee getReferee() {
-		return referee;
+		return this.referee;
 	}
 
-	public void setReferee(Referee referee) {
+	public void setReferee(final Referee referee) {
 		this.referee = referee;
 	}
-
 
 }

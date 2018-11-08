@@ -1,9 +1,9 @@
+
 package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -11,15 +11,16 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Category extends DomainEntity {
 
-	private String name;
-	private Boolean root;
+	private String	name;
+	private Boolean	root;
+
 
 	@NotBlank
 	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		/*
 		 * if (this.root.equals(false)) { this.name.toUpperCase(); } else {
 		 */
@@ -31,21 +32,8 @@ public class Category extends DomainEntity {
 		return this.root;
 	}
 
-	public void setRoot(Boolean root) {
+	public void setRoot(final Boolean root) {
 		this.root = root;
-	}
-
-	// Relationships
-
-	private Finder finder;
-
-	@OneToOne(optional = true)
-	public Finder getFinder() {
-		return this.finder;
-	}
-
-	public void setFinder(Finder finder) {
-		this.finder = finder;
 	}
 
 }

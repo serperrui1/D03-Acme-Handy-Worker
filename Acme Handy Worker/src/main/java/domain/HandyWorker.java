@@ -18,7 +18,8 @@ import org.hibernate.validator.constraints.Range;
 public class HandyWorker extends Endorser {
 
 	private String	makeName;
-	private Double score;
+	private Double	score;
+
 
 	@Transient
 	// TODO: atributo derivado
@@ -27,11 +28,9 @@ public class HandyWorker extends Endorser {
 		return this.score;
 	}
 
-	public void setScore( Double score) {
+	public void setScore(final Double score) {
 		this.score = score;
 	}
-
-
 
 	@NotBlank
 	//TODO: default name
@@ -39,7 +38,7 @@ public class HandyWorker extends Endorser {
 		return this.makeName;
 	}
 
-	public void setMakeName( String makeName) {
+	public void setMakeName(final String makeName) {
 		this.makeName = makeName;
 	}
 
@@ -47,9 +46,10 @@ public class HandyWorker extends Endorser {
 	// Relationships ----------------------------------------------------------
 	private Collection<Tutorial>	tutorials;
 	private Application				application;
-	private Collection<WorkPlan>	workPlans;
+	private WorkPlan				workPlan;
 	private Curriculum				curriculum;
-
+	private Finder					finder;
+	private Collection<Comment>		comments;
 
 
 	@OneToMany(mappedBy = "handyWorker")
@@ -57,7 +57,7 @@ public class HandyWorker extends Endorser {
 		return this.tutorials;
 	}
 
-	public void setTutorials( Collection<Tutorial> tutorial) {
+	public void setTutorials(final Collection<Tutorial> tutorial) {
 		this.tutorials = tutorial;
 	}
 
@@ -66,17 +66,17 @@ public class HandyWorker extends Endorser {
 		return this.application;
 	}
 
-	public void setApplication( Application application) {
+	public void setApplication(final Application application) {
 		this.application = application;
 	}
 
-	@OneToMany(mappedBy = "handyWorker")
-	public Collection<WorkPlan> getWorkPlans() {
-		return this.workPlans;
+	@OneToOne(optional = true)
+	public WorkPlan getWorkPlan() {
+		return this.workPlan;
 	}
 
-	public void setWorkPlans( Collection<WorkPlan> workPlans) {
-		this.workPlans = workPlans;
+	public void setWorkPlan(final WorkPlan workPlan) {
+		this.workPlan = workPlan;
 	}
 
 	@OneToOne(optional = true)
@@ -84,7 +84,25 @@ public class HandyWorker extends Endorser {
 		return this.curriculum;
 	}
 
-	public void setCurriculum( Curriculum curriculum) {
+	public void setCurriculum(final Curriculum curriculum) {
 		this.curriculum = curriculum;
+	}
+
+	@OneToOne(optional = true)
+	public Finder getFinder() {
+		return this.finder;
+	}
+
+	public void setFinder(final Finder finder) {
+		this.finder = finder;
+	}
+
+	@OneToMany(mappedBy = "handyWorker")
+	public Collection<Comment> getComments() {
+		return this.comments;
+	}
+
+	public void setComments(final Collection<Comment> comments) {
+		this.comments = comments;
 	}
 }
