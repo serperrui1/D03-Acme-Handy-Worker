@@ -1730,4 +1730,148 @@
 		<property name="finder" ref="finder1" />
 		<property name="application" ref="application1" />
 	</bean>
+	
+	<!-- PERSONAL RECORD -->
+	
+	<bean class="domain.personalRecord" id="personalrecord1">
+		<property name="fullName" value="Sergio Perea Ruiz"/>
+		<property name="photo" value="http://www.foto1.com" />
+		<property name="email" value="Sergioperea@gmail.com" />
+		<property name="phone" value="622545487" />
+		<property name="linkedIn" value="https://www.instagram.com/SPuser" />
+	</bean>	
+	
+	<bean class="domain.personalRecord" id="personalrecord2">
+		<property name="fullName" value="Francisco José Rodríguez Gómez"/>
+		<property name="photo" value="http://www.foto2.com" />
+		<property name="email" value="FranciscoRodriguez@gmail.com" />
+		<property name="phone" value="643782327" />
+		<property name="linkedIn" value="https://www.instagram.com/FJRGuser" />
+	</bean>	
+	
+	<!-- EDUCATION RECORD -->
+	
+	<bean class="domain.educationRecord" id="educationrecord1">
+		<property name="endStudy" value="05/06/2008"/>
+		<property name="institution" value="School of Magic"/>
+		<property name="link" value="www.MyPersonalRecord/SPuser.com"/>
+		<property name="comments" value=""/>
+	</bean>	
+	
+	
+	<bean class="domain.educationRecord" id="educationrecord2">
+		<property name="endStudy" value=""/>
+		<property name="institution" value="Escuela Dora The Explorer"/>
+		<property name="link" value="www.MyPersonalRecord/FJRGuser.com"/>
+		<property name="comments" value=""/>
+	</bean>
+	
+	<!-- PROFESIONAL RECORD -->
+	
+	<bean class="domain.profesionalRecord" id="profesionalrecord1">
+		<property name="nameCompany" value="TheBestEntreprise"/>
+		<property name="startPeriod" value="05/06/2010"/>
+		<property name="endPeriod" value="05/06/2011"/>
+		<property name="role" value="Scrum Master" />
+		<property name="link" value="https://www.MyProfesionalRecord.com/SPuser" />
+		<property name="comments" value=""/>
+	</bean>
+	
+	<bean class="domain.profesionalRecord" id="profesionalrecord2">
+		<property name="nameCompany" value="TheBestOfTheBestEntreprise"/>
+		<property name="startPeriod" value="05/06/2012"/>
+		<property name="endPeriod" value="05/06/2017"/>
+		<property name="role" value="Project Owner" />
+		<property name="link" value="https://www.MyProfesionalRecord.com/FJRGuser" />
+		<property name="comments" value=""/>
+	</bean>
+	
+	<!-- ENDORSER RECORD -->
+	
+	<bean class="domain.endorserRecord" id="endorserrecord1">
+		<property name="fullName" value="Sergio Perea Ruiz"/>
+		<property name="email" value="Sergioperea@gmail.com" />
+		<property name="phone" value="622545487" />
+		<property name="linkedIn" value="https://www.instagram.com/SPuser" />
+		<property name="comments" value=""/>
+	</bean>	
+	
+	<bean class="domain.endorserRecord" id="endorserrecord2">
+		<property name="fullName" value="Francisco José Rodríguez Gómez"/>
+		<property name="email" value="FranciscoRodriguez@gmail.com" />
+		<property name="phone" value="643782327" />
+		<property name="linkedIn" value="https://www.instagram.com/FJRGuser" />
+		<property name="comments" value=""/>
+	</bean>	
+	
+	<!--  MISCELLANEUS RECORD -->
+	
+	<bean class="domain.miscellaneusRecord" id="miscellaneusrecord1">
+		<property name="title" value="Horse Whisperer"/>
+		<property name="link" value=""/>
+		<property name="comments" value=""/>
+	</bean>
+	
+	<bean class="domain.miscellaneusRecord" id="miscellaneusrecord2">
+		<property name="title" value="Magician"/>
+		<property name="link" value=""/>
+		<property name="comments" value=""/>
+	</bean>
+
+	<!-- CURRICULUM -->
+	
+	<bean class="domain.Curriculum" id="curriculum1">
+		<property name="ticker" value="211639-5SXq12"/>
+		<property name="personalRecord" value="personalrecord1"/>
+		<property name="handyWorker" value="handyworker1"/>
+		<property name="educationRecords">
+			<list>
+			<ref bean="educationrecord1" />
+			</list>
+		</property>
+		<property name="professionalRecords">
+			<list>
+			<ref bean="professionalrecord1" />
+			</list>
+		</property>
+		<property name="endorserRecords">
+			<list>
+			<ref bean="endorserrecord1" />
+			</list>
+		</property>
+		<property name="miscellaneusRecords">
+			<list>
+			<ref bean="miscellaneusrecord1"/>
+			</list>
+		</property>
+		
+		
+	</bean>
+	
+	<bean class="domain.Curriculum" id="curriculum1">
+		<property name="ticker" value="841511-6SKq5y"/>
+		<property name="personalRecord" value="personalrecord2"/>
+		<property name="handyWorker" value="handyworker2"/>
+		<property name="educationRecords">
+			<list>
+			<ref bean="educationrecord2" />
+			</list>
+		</property>
+		<property name="professionalRecords">
+			<list>
+			<ref bean="professionalrecord2" />
+			</list>
+		</property>
+		<property name="endorserRecords">
+			<list>
+			<ref bean="endorserrecord2" />
+			</list>
+		</property>
+		<property name="miscellaneusRecords">
+			<list>
+			<ref bean="miscellaneusrecord2"/>
+			</list>
+		</property>
+	</bean>
+	
 </beans>
