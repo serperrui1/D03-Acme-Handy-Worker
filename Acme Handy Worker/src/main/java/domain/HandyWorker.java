@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -55,7 +56,7 @@ public class HandyWorker extends Endorser {
 	private Collection<Comment>		comments;
 
 
-	@OneToMany(mappedBy = "handyWorker")
+	@OneToMany(mappedBy = "handyWorker",cascade=CascadeType.ALL)
 	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
@@ -64,7 +65,7 @@ public class HandyWorker extends Endorser {
 		this.tutorials = tutorial;
 	}
 
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Application getApplication() {
 		return this.application;
 	}
@@ -100,7 +101,7 @@ public class HandyWorker extends Endorser {
 		this.finder = finder;
 	}
 
-	@OneToMany(mappedBy = "handyWorker")
+	@OneToMany(mappedBy = "handyWorker",cascade=CascadeType.ALL)
 	public Collection<Comment> getComments() {
 		return this.comments;
 	}
