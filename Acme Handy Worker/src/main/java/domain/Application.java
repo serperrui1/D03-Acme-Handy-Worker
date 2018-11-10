@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -10,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -20,10 +22,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Application extends DomainEntity {
 
-	private Date moment;
-	private String status;
-	private Double price;
-	private Collection<String> comments;
+	private Date				moment;
+	private String				status;
+	private Double				price;
+	private Collection<String>	comments;
+
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
@@ -54,6 +57,7 @@ public class Application extends DomainEntity {
 		this.price = price;
 	}
 
+	@Valid
 	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
@@ -63,27 +67,29 @@ public class Application extends DomainEntity {
 		this.comments = comments;
 	}
 
-//	// TODO: Propiedad derivada
-//	// @Transient
-//	public String getStatusColor() {
-//		String res;
-//		if (status.equals("PENDING")) {
-//			res = "GREY";
-//		} else if (status.equals("ACCEPTED")) {
-//			res = "GREEN";
-//		} else
-//			res = "ORANGE";
-//		return res;
-//
-//	}
-//
-//	public void setStatusColor(final String statusColor) {
-//	}
+
+	//	// TODO: Propiedad derivada
+	//	// @Transient
+	//	public String getStatusColor() {
+	//		String res;
+	//		if (status.equals("PENDING")) {
+	//			res = "GREY";
+	//		} else if (status.equals("ACCEPTED")) {
+	//			res = "GREEN";
+	//		} else
+	//			res = "ORANGE";
+	//		return res;
+	//
+	//	}
+	//
+	//	public void setStatusColor(final String statusColor) {
+	//	}
 
 	// Relationships
 
-	private FixUpTask fixUpTask;
-	private HandyWorker handyworker;
+	private FixUpTask	fixUpTask;
+	private HandyWorker	handyworker;
+
 
 	@OneToOne(optional = false)
 	public FixUpTask getFixUpTask() {

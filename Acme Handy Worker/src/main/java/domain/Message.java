@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -50,6 +51,7 @@ public class Message extends DomainEntity {
 		return this.priority;
 	}
 
+	@Valid
 	@ElementCollection
 	public Collection<String> getTags() {
 		return this.tags;

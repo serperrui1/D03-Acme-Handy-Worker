@@ -1,6 +1,5 @@
-package domain;
 
-import java.util.Date;
+package domain;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -14,63 +13,67 @@ import org.hibernate.validator.constraints.Range;
 @Embeddable
 @Access(AccessType.PROPERTY)
 public class CreditCard {
-	private String holderName;
-	private String brandName;
-	private Integer number;
-	private Date expirationMonth;
-	private Date expirationYeat;
-	private Integer cvv;
+
+	private String	holderName;
+	private String	brandName;
+	private String	number;
+	private Integer	expirationMonth;
+	private Integer	expirationYear;
+	private Integer	cvv;
+
 
 	@NotBlank
 	public String getHolderName() {
-		return holderName;
+		return this.holderName;
 	}
 
-	public void setHolderName(String holderName) {
+	public void setHolderName(final String holderName) {
 		this.holderName = holderName;
 	}
 
 	@NotBlank
 	public String getBrandName() {
-		return brandName;
+		return this.brandName;
 	}
 
-	public void setBrandName(String brandName) {
+	public void setBrandName(final String brandName) {
 		this.brandName = brandName;
 	}
 
 	@CreditCardNumber
 	@Pattern(regexp = "/^[0-9](16}$/")
-	public Integer getNumber() {
-		return number;
+	public String getNumber() {
+		return this.number;
 	}
 
-	public void setNumber(Integer number) {
+	public void setNumber(final String number) {
 		this.number = number;
 	}
 
-	public Date getExpirationMonth() {
-		return expirationMonth;
+	@Range(min = 1, max = 12)
+	public Integer getExpirationMonth() {
+		return this.expirationMonth;
 	}
 
-	public void setExpirationMonth(Date expirationMonth) {
+	public void setExpirationMonth(final Integer expirationMonth) {
 		this.expirationMonth = expirationMonth;
 	}
 
-	public Date getExpirationYeat() {
-		return expirationYeat;
+	@Range(min = 0, max = 99)
+	public Integer getExpirationYear() {
+		return this.expirationYear;
 	}
 
-	public void setExpirationYeat(Date expirationYeat) {
-		this.expirationYeat = expirationYeat;
+	public void setExpirationYear(final Integer expirationYear) {
+		this.expirationYear = expirationYear;
 	}
 
 	@Range(min = 100, max = 999)
 	public Integer getCvv() {
-		return cvv;
+		return this.cvv;
 	}
 
-	public void setCvv(Integer cvv) {
+	public void setCvv(final Integer cvv) {
 		this.cvv = cvv;
 	}
 

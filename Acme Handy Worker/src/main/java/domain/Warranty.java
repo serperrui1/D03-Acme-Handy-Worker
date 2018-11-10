@@ -7,6 +7,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -29,6 +30,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@NotBlank
+	@Valid
 	@ElementCollection
 	public Collection<String> getTerms() {
 		return this.terms;
@@ -39,6 +41,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@NotBlank
+	@Valid
 	@ElementCollection
 	public Collection<String> getLaws() {
 		return this.laws;

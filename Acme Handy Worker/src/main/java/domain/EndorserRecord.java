@@ -7,6 +7,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -61,6 +62,7 @@ public class EndorserRecord extends DomainEntity {
 		this.linkedIn = linkedIn;
 	}
 
+	@Valid
 	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;

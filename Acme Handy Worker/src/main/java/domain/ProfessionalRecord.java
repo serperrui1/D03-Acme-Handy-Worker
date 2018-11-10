@@ -10,6 +10,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -20,11 +21,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class ProfessionalRecord extends DomainEntity {
 
-	private String	nameCompany;
-	private Date	startPeriod;
-	private Date	endPeriod;
-	private String	role;
-	private String	link;
+	private String				nameCompany;
+	private Date				startPeriod;
+	private Date				endPeriod;
+	private String				role;
+	private String				link;
 	private Collection<String>	comments;
 
 
@@ -33,7 +34,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.nameCompany;
 	}
 
-	public void setNameCompany( String nameCompany) {
+	public void setNameCompany(final String nameCompany) {
 		this.nameCompany = nameCompany;
 	}
 
@@ -44,7 +45,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.startPeriod;
 	}
 
-	public void setStartPeriod( Date startPeriod) {
+	public void setStartPeriod(final Date startPeriod) {
 		this.startPeriod = startPeriod;
 	}
 
@@ -54,7 +55,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.endPeriod;
 	}
 
-	public void setEndPeriod( Date endPeriod) {
+	public void setEndPeriod(final Date endPeriod) {
 		this.endPeriod = endPeriod;
 	}
 
@@ -63,7 +64,7 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.role;
 	}
 
-	public void setRole( String role) {
+	public void setRole(final String role) {
 		this.role = role;
 	}
 
@@ -72,16 +73,17 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.link;
 	}
 
-	public void setLink( String link) {
+	public void setLink(final String link) {
 		this.link = link;
 	}
 
+	@Valid
 	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
 	}
 
-	public void setComments(Collection<String> comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
 

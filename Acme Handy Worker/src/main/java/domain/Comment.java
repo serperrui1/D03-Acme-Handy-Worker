@@ -1,11 +1,8 @@
 
 package domain;
 
-import java.util.Collection;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -13,16 +10,15 @@ import javax.persistence.ManyToOne;
 @Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity {
 
-	private Collection<String>	comments;
+	private String	body;
 
 
-	@ElementCollection
-	public Collection<String> getComments() {
-		return this.comments;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setComments(final Collection<String> comments) {
-		this.comments = comments;
+	public void setBody(final String body) {
+		this.body = body;
 	}
 
 

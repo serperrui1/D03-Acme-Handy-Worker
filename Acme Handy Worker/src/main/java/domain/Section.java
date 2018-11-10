@@ -8,6 +8,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -19,7 +20,7 @@ public class Section extends DomainEntity {
 	private Integer				sectionId;
 	private String				title;
 	private String				text;
-	private Collection<String>	picture;
+	private Collection<String>	pictures;
 
 
 	@Column(unique = true)
@@ -50,13 +51,14 @@ public class Section extends DomainEntity {
 	}
 
 	@URL
+	@Valid
 	@ElementCollection
-	public Collection<String> getPicture() {
-		return this.picture;
+	public Collection<String> getPictures() {
+		return this.pictures;
 	}
 
-	public void setPicture(final Collection<String> picture) {
-		this.picture = picture;
+	public void setPictures(final Collection<String> pictures) {
+		this.pictures = pictures;
 	}
 
 }
