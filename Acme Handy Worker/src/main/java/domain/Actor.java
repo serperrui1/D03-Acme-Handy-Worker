@@ -5,11 +5,17 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
+
+import security.UserAccount;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -87,11 +93,21 @@ public class Actor extends DomainEntity {
 
 
 	// Relationships ----------------------------------------------------------
+	private UserAccount					userAccount;
 	private Collection<Message>			sentMessages;
 	private Collection<Message>			receivedMessages;
 	private Collection<MessageFolder>	messageFolders;
 	private Collection<Profile>			profiles;
 
+
+	@NotNull
+	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
+	public UserAccount getUserAccount() {
+		return this.userAccount;
+	}
+	public void setUserAccount(final UserAccount userAccount) {
+		this.userAccount = userAccount;
+	}
 
 	@OneToMany(mappedBy = "sender")
 	public Collection<Message> getSentMessages() {
