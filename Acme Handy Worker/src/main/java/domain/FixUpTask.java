@@ -111,7 +111,7 @@ public class FixUpTask extends DomainEntity {
 		this.category = category;
 	}
 
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Application getApplication() {
 		return this.application;
 	}
@@ -120,7 +120,7 @@ public class FixUpTask extends DomainEntity {
 		this.application = application;
 	}
 
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public WorkPlan getWorkPlan() {
 		return this.workPlan;
 	}
