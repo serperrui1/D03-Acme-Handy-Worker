@@ -8,10 +8,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -50,8 +48,8 @@ public class Section extends DomainEntity {
 		this.text = text;
 	}
 
-	@URL
-	@Valid
+	//@URL
+	
 	@ElementCollection
 	public Collection<String> getPictures() {
 		return this.pictures;

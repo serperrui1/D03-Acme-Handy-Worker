@@ -51,7 +51,7 @@ public class Sponsorship extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 	private Tutorial	tutorial;
-	private Sponsor		sponsor;
+	//private Sponsor		sponsor;
 
 
 	@ManyToOne(optional = false)
@@ -63,13 +63,13 @@ public class Sponsorship extends DomainEntity {
 		this.tutorial = tutorial;
 	}
 
-	@ManyToOne(optional = false)
-	public Sponsor getSponsor() {
-		return this.sponsor;
-	}
-
-	public void setSponsor(final Sponsor sponsor) {
-		this.sponsor = sponsor;
-	}
+//	@ManyToOne(optional = false)
+//	public Sponsor getSponsor() {
+//		return this.sponsor;
+//	}
+//
+//	public void setSponsor(final Sponsor sponsor) {
+//		this.sponsor = sponsor;
+//	}
 
 }
