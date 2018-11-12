@@ -2069,8 +2069,8 @@
 		<property name="handyworker" ref="handyworker2" />
 	</bean>
 	
-	<bean class="domain.Application" id="application1">
-		<property name="moment" value="10/12/2019 23:00" />
+	<bean class="domain.Application" id="application3">
+		<property name="moment" value="10/12/2015 23:00" />
 		<property name="status" value="REJECTED" />
 		<property name="price" value="99.5" />
 		<property name="comments">
@@ -2085,7 +2085,7 @@
 <!-- FIX-UP TASK -->
 	
 	<bean class="domain.FixUpTask" id="task1">
-		<property name="ticker" value="171210-3SD7AS" />
+		<property name="ticker" value="171211-3SD7AS" />
 		<property name="startMoment" value="10/12/2017 12:00" />
 		<property name="endMoment" value="23/12/2017 12:00" />
 		<property name="description" value="This is the FixUpTask 1" />
@@ -2099,8 +2099,8 @@
 	</bean> 
 	
 	<bean class="domain.FixUpTask" id="task2">
-		<property name="ticker" value="738124-1SJ7JJ" />
-		<property name="startMoment" value="10/12/2018 12:00" />
+		<property name="ticker" value="111111-1SJ7JJ" />
+		<property name="startMoment" value="10/12/2015 12:00" />
 		<property name="endMoment" value="23/12/2018 12:00" />
 		<property name="description" value="This is the FixUpTask 2" />
 		<property name="address" value="address2" />
@@ -2114,7 +2114,7 @@
 	
 	<bean class="domain.FixUpTask" id="task3">
 		<property name="ticker" value="171210-3SD7AS" />
-		<property name="startMoment" value="10/12/2019 12:00" />
+		<property name="startMoment" value="10/12/2015 12:00" />
 		<property name="endMoment" value="23/12/2019 12:00" />
 		<property name="description" value="This is the FixUpTask 3" />
 		<property name="address" value="address3" />
@@ -2190,7 +2190,7 @@
 	<!-- Complaint -->
 
 	<bean class="domain.Complaint" id="complaint1">
-		<property name="ticker" value="171212-3SD7AS"/>
+		<property name="ticker" value="171012-3SD7AS"/>
 		<property name="moment" value="12/12/2017 14:00"/>
 		<property name="description" value="Complaint1's description"/>
 		<property name="customer" ref="customer1"/>
@@ -2204,7 +2204,7 @@
 	</bean>
 	
 	<bean class="domain.Complaint" id="complaint2">
-		<property name="ticker" value="171411-3SJ7AS"/>
+		<property name="ticker" value="171111-3SJ7AS"/>
 		<property name="moment" value="13/12/2017 15:00"/>
 		<property name="description" value="Complaint2's description"/>
 		<property name="customer" ref="customer2"/>
@@ -2218,7 +2218,7 @@
 	</bean>
 	
 	<bean class="domain.Complaint" id="complaint3">
-		<property name="ticker" value="171212-3SD7AX"/>
+		<property name="ticker" value="171212-3SD8AX"/>
 		<property name="moment" value="14/12/2017 17:00"/>
 		<property name="description" value="Complaint3's description"/>
 		<property name="customer" ref="customer3"/>
@@ -2408,7 +2408,7 @@
 
 	<bean class="domain.Tutorial" id="tutorial1">
 		<property name="title" value="Tutorial1's title"/>
-		<property name="moment" value="24/10/2018 08:30"/>
+		<property name="moment" value="24/10/2011 08:30"/>
 		<property name="summary" value="Tutorial1's summary"/>
 		<property name="pictures">
 			<list value-type="java.lang.String">
@@ -2433,7 +2433,7 @@
 	
 	<bean class="domain.Tutorial" id="tutorial2">
 		<property name="title" value="Tutorial1's title"/>
-		<property name="moment" value="17/05/2019 16:30"/>
+		<property name="moment" value="17/05/2014 16:30"/>
 		<property name="summary" value="Tutorial1's summary"/>
 		<property name="pictures">
 			<list value-type="java.lang.String">
@@ -2591,18 +2591,16 @@
 	<bean class="domain.Sponsorship" id="sponsorship2">
 		<property name="banner" value="https://www.sponsorship2banner.com"/>
 		<property name="targetPage" value="https://www.sponsorshiptargetpage.com"/>
-		<property name="creditCard" ref="creditCard2"/>
+<!-- 		<property name="creditCard" ref="creditCard2"/> -->
 		<property name="tutorial" ref="tutorial2"/>
-		<property name="sponsor" ref="sponsor2"/>
-	</bean>
+			</bean>
 	
 	<bean class="domain.Sponsorship" id="sponsorship3">
 		<property name="banner" value="https://www.sponsorship1banner.com"/>
 		<property name="targetPage" value="https://www.sponsorshiptargetpage.com"/>
-		<property name="creditCard" ref="creditCard3"/>
+<!-- 		<property name="creditCard" ref="creditCard3"/> -->
 		<property name="tutorial" ref="tutorial3"/>
-		<property name="sponsor" ref="sponsor3"/>
-	</bean>
+			</bean>
 	
 	<!-- Creditcard -->
 	
@@ -2655,7 +2653,7 @@
 	</bean>
 	
 	<bean class="domain.Endorsement" id="endorsement2">
-		<property name="moment" value="16/04/2018"/>
+		<property name="moment" value="10/04/2018"/>
 		<property name="comments">
 			<list value-type="java.lang.String">
 				
@@ -2666,7 +2664,7 @@
 	</bean>
 	
 	<bean class="domain.Endorsement" id="endorsement3">
-		<property name="moment" value="27/12/2017"/>
+		<property name="moment" value="01/12/2017"/>
 		<property name="comments">
 			<list value-type="java.lang.String">
 				
