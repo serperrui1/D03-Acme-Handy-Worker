@@ -81,7 +81,9 @@ public class Message extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 	private Actor	sender;
 	private Actor	recipient;
-
+	//private Collection<MessageFolder> messagefolders;
+	
+	
 
 	@ManyToOne(optional = false)
 	public Actor getSender() {

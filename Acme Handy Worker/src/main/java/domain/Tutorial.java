@@ -12,11 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -45,7 +43,7 @@ public class Tutorial extends DomainEntity {
 		return this.moment;
 	}
 
-	public void setMoment(final Date moment) {
+	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
 
@@ -54,18 +52,17 @@ public class Tutorial extends DomainEntity {
 		return this.summary;
 	}
 
-	public void setSummary(final String summary) {
+	public void setSummary(String summary) {
 		this.summary = summary;
 	}
 
-	@URL
-	@Valid
+	//@URL
 	@ElementCollection
 	public Collection<String> getPictures() {
 		return this.pictures;
 	}
 
-	public void setPictures(final Collection<String> pictures) {
+	public void setPictures(Collection<String> pictures) {
 		this.pictures = pictures;
 	}
 
@@ -82,7 +79,7 @@ public class Tutorial extends DomainEntity {
 		return this.handyWorker;
 	}
 
-	public void setHandyWorker(final HandyWorker handyWorker) {
+	public void setHandyWorker(HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 
@@ -91,7 +88,7 @@ public class Tutorial extends DomainEntity {
 		return this.sections;
 	}
 
-	public void setSections(final Collection<Section> section) {
+	public void setSections(Collection<Section> section) {
 		this.sections = section;
 	}
 
@@ -100,7 +97,7 @@ public class Tutorial extends DomainEntity {
 		return this.sponsorships;
 	}
 
-	public void setSponsorships(final Collection<Sponsorship> sponsorships) {
+	public void setSponsorships(Collection<Sponsorship> sponsorships) {
 		this.sponsorships = sponsorships;
 	}
 

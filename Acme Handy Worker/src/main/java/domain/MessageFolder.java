@@ -6,25 +6,25 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class MessageFolder extends DomainEntity {
-
+	@NotBlank
 	private String	name;
 	private boolean	modifiable;
 
 
-	@NotBlank
+	
 	public String getName() {
 		return this.name;
 	}
 
-	public void setName(final String name) {
-		if (this.getModifiable())
+	public void setName(String name) {
+		//if (this.getModifiable())
 			this.name = name;
 
 	}
@@ -33,7 +33,7 @@ public class MessageFolder extends DomainEntity {
 		return this.modifiable;
 	}
 
-	public void setModifiable(final Boolean modifiable) {
+	public void setModifiable(Boolean modifiable) {
 		this.modifiable = modifiable;
 	}
 
@@ -41,13 +41,12 @@ public class MessageFolder extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 	private Collection<Message>	messages;
 
-
-	@OneToMany
+	@ManyToMany
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}
 
-	public void setMessages(final Collection<Message> messages) {
+	public void setMessages(Collection<Message> messages) {
 		this.messages = messages;
 	}
 
