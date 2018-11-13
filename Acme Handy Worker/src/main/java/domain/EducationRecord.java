@@ -15,7 +15,6 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -29,7 +28,6 @@ public class EducationRecord extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	public Date getEndStudy() {
 		return this.endStudy;
 	}

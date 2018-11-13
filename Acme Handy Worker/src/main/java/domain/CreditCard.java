@@ -20,6 +20,7 @@ public class CreditCard {
 	private Integer	expirationMonth;
 	private Integer	expirationYear;
 	private Integer	cvv;
+	private String typeCreditCard;
 
 
 	@NotBlank
@@ -75,6 +76,14 @@ public class CreditCard {
 
 	public void setCvv(final Integer cvv) {
 		this.cvv = cvv;
+	}
+	@NotBlank
+	public String getTypeCreditCard() {
+		return typeCreditCard;
+	}
+
+	public void setTypeCreditCard(String typeCreditCard) {
+		this.typeCreditCard = typeCreditCard;
 	}
 
 }

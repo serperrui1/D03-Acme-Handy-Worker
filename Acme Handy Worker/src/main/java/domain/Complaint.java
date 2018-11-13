@@ -7,17 +7,17 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -26,7 +26,7 @@ public class Complaint extends DomainEntity {
 	private String	ticker;
 	private Date	moment;
 	private String	description;
-	private Integer	attachments;
+	private Collection<String>	attachments;
 
 
 	@NotBlank
@@ -42,7 +42,6 @@ public class Complaint extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -60,33 +59,22 @@ public class Complaint extends DomainEntity {
 		this.description = description;
 	}
 
-	@Transient
-	public Integer getAttachments() {
-		this.attachments = 0;
-		for (final Report r : this.getReports())
-			this.attachments = this.attachments + r.getAttachments().size();
-		return this.attachments;
+	@ElementCollection
+	@NotEmpty//TODO: NO ESTA CLARO EL NOT EMPTY DE ATTACTMENTS
+	public Collection<String> getAttachments() {
+		return attachments;
 	}
 
-	public void setAttachments(final Integer attachments) {
+	public void setAttachments(Collection<String> attachments) {
 		this.attachments = attachments;
 	}
 
 
+
+
 	// Relationships ----------------------------------------------------------
-	private Customer			customer;
 	private FixUpTask			fixUpTask;
 	private Collection<Report>	reports;
-
-
-	@ManyToOne(optional = false)
-	public Customer getCustomer() {
-		return this.customer;
-	}
-
-	public void setCustomer(final Customer customer) {
-		this.customer = customer;
-	}
 
 	@ManyToOne(optional = false)
 	public FixUpTask getFixUpTask() {

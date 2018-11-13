@@ -8,14 +8,12 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -38,7 +36,6 @@ public class Tutorial extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -69,19 +66,11 @@ public class Tutorial extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	private HandyWorker				handyWorker;
 	private Collection<Section>		sections;
 	private Collection<Sponsorship>	sponsorships;
 
 
-	@ManyToOne(optional = false)
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
 
-	public void setHandyWorker(HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
 
 	@OneToMany
 	public Collection<Section> getSections() {
