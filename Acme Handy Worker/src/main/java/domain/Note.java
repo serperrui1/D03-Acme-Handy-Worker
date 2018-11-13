@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -37,7 +38,7 @@ public class Note extends DomainEntity {
 	private Collection<String>	HandyWorkerComments;
 
 
-
+@ElementCollection
 	public Collection<String> getCustomerComments() {
 		return customerComments;
 	}
@@ -45,7 +46,7 @@ public class Note extends DomainEntity {
 	public void setCustomerComments(Collection<String> customerComments) {
 		this.customerComments = customerComments;
 	}
-
+	@ElementCollection
 	public Collection<String> getRefereeComments() {
 		return refereeComments;
 	}
@@ -53,7 +54,7 @@ public class Note extends DomainEntity {
 	public void setRefereeComments(Collection<String> refereeComments) {
 		this.refereeComments = refereeComments;
 	}
-
+	@ElementCollection
 	public Collection<String> getHandyWorkerComments() {
 		return HandyWorkerComments;
 	}

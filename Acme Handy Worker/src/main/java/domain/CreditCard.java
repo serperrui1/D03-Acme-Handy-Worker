@@ -42,7 +42,7 @@ public class CreditCard {
 	}
 
 	@CreditCardNumber
-	@Pattern(regexp = "/^[0-9](16}$/")
+	@Pattern(regexp = "^\\d{16}$")
 	public String getNumber() {
 		return this.number;
 	}
