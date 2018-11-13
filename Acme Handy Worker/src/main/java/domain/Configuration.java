@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -63,6 +64,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
+	@ElementCollection
 	public Collection<String> getSpamWord() {
 		return spamWord;
 	}
@@ -82,6 +84,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getCreditCard() {
 		return typeCreditCard;
 	}
@@ -100,6 +103,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
+	@ElementCollection
 	public Collection<String> getLeafCategory() {
 		return leafCategory;
 	}
@@ -109,6 +113,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
+	@ElementCollection
 	public Collection<String> getPositiveWords() {
 		return positiveWords;
 	}
@@ -118,6 +123,7 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
+	@ElementCollection
 	public Collection<String> getNegativeWords() {
 		return negativeWords;
 	}
