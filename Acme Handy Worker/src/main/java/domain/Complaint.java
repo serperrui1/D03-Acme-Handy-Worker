@@ -1,4 +1,3 @@
-
 package domain;
 
 import java.util.Collection;
@@ -23,11 +22,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Access(AccessType.PROPERTY)
 public class Complaint extends DomainEntity {
 
-	private String	ticker;
-	private Date	moment;
-	private String	description;
-	private Collection<String>	attachments;
-
+	private String ticker;
+	private Date moment;
+	private String description;
+	private Collection<String> attachments;
 
 	@NotBlank
 	@Pattern(regexp = "^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9]{6}$")
@@ -60,7 +58,6 @@ public class Complaint extends DomainEntity {
 	}
 
 	@ElementCollection
-	@NotEmpty//TODO: NO ESTA CLARO EL NOT EMPTY DE ATTACTMENTS
 	public Collection<String> getAttachments() {
 		return attachments;
 	}
@@ -69,12 +66,9 @@ public class Complaint extends DomainEntity {
 		this.attachments = attachments;
 	}
 
-
-
-
 	// Relationships ----------------------------------------------------------
-	private FixUpTask			fixUpTask;
-	private Collection<Report>	reports;
+	private FixUpTask fixUpTask;
+	private Collection<Report> reports;
 
 	@ManyToOne(optional = false)
 	public FixUpTask getFixUpTask() {

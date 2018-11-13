@@ -12,7 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -56,7 +55,7 @@ public class Application extends DomainEntity {
 		this.price = price;
 	}
 
-	@Valid
+	
 	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
@@ -90,7 +89,7 @@ public class Application extends DomainEntity {
 	private HandyWorker	handyworker;
 
 
-	@OneToMany(mappedBy="aplication")
+	@OneToMany(mappedBy="application")
 	public Collection<FixUpTask> getFixUpTask() {
 		return this.fixUpTasks;
 	}
