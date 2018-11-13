@@ -14,17 +14,6 @@ public class Referee extends Actor {
 
 	// Relationships ----------------------------------------------------------
 	private Collection<Report>	reports;
-	private Collection<Comment>	comments;
-
-
-	@OneToMany(mappedBy = "referee")
-	public Collection<Comment> getComments() {
-		return this.comments;
-	}
-
-	public void setComments(final Collection<Comment> comments) {
-		this.comments = comments;
-	}
 
 	@OneToMany
 	public Collection<Report> getReports() {

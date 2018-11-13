@@ -8,12 +8,9 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -24,7 +21,6 @@ public class Note extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -36,16 +32,34 @@ public class Note extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 	private Report				report;
-	private Collection<Comment>	comments;
+	private Collection<String>	customerComments;
+	private Collection<String>	refereeComments;
+	private Collection<String>	HandyWorkerComments;
 
 
-	@OneToMany
-	public Collection<Comment> getComments() {
-		return this.comments;
+
+	public Collection<String> getCustomerComments() {
+		return customerComments;
 	}
 
-	public void setComments(final Collection<Comment> comments) {
-		this.comments = comments;
+	public void setCustomerComments(Collection<String> customerComments) {
+		this.customerComments = customerComments;
+	}
+
+	public Collection<String> getRefereeComments() {
+		return refereeComments;
+	}
+
+	public void setRefereeComments(Collection<String> refereeComments) {
+		this.refereeComments = refereeComments;
+	}
+
+	public Collection<String> getHandyWorkerComments() {
+		return HandyWorkerComments;
+	}
+
+	public void setHandyWorkerComments(Collection<String> handyWorkerComments) {
+		HandyWorkerComments = handyWorkerComments;
 	}
 
 	@ManyToOne(optional = false)

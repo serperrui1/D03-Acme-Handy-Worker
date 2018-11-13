@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -50,13 +49,12 @@ public class HandyWorker extends Endorser {
 	// Relationships ----------------------------------------------------------
 	private Collection<Tutorial>	tutorials;
 	private Application				application;
-	private WorkPlan				workPlan;
 	private Curriculum				curriculum;
 	private Finder					finder;
-	private Collection<Comment>		comments;
+	
 
 
-	@OneToMany(mappedBy = "handyWorker",cascade=CascadeType.ALL)
+	@OneToMany
 	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
@@ -72,15 +70,6 @@ public class HandyWorker extends Endorser {
 
 	public void setApplication(final Application application) {
 		this.application = application;
-	}
-
-	@OneToOne(optional = true)
-	public WorkPlan getWorkPlan() {
-		return this.workPlan;
-	}
-
-	public void setWorkPlan(final WorkPlan workPlan) {
-		this.workPlan = workPlan;
 	}
 
 	@OneToOne(optional = true)
@@ -101,12 +90,4 @@ public class HandyWorker extends Endorser {
 		this.finder = finder;
 	}
 
-	@OneToMany(mappedBy = "handyWorker",cascade=CascadeType.ALL)
-	public Collection<Comment> getComments() {
-		return this.comments;
-	}
-
-	public void setComments(final Collection<Comment> comments) {
-		this.comments = comments;
-	}
 }

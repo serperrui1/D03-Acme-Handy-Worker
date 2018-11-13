@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -8,6 +9,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,7 +17,6 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -59,7 +60,6 @@ public class FixUpTask extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getStartMoment() {
 		return this.startMoment;
 	}
@@ -72,7 +72,6 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getEndMoment() {
 		return this.endMoment;
 	}
@@ -96,10 +95,11 @@ public class FixUpTask extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 	private Warranty	warranty;
-	private WorkPlan	workPlan;
 	private Category	category;
 	private Application	application;
 	private Customer	customer;
+	private Collection<Phase> phases;
+	private Collection<Complaint> complaints;
 
 
 	@ManyToOne(optional = false)
@@ -120,15 +120,7 @@ public class FixUpTask extends DomainEntity {
 		this.application = application;
 	}
 
-	@OneToOne(optional = true)
-	public WorkPlan getWorkPlan() {
-		return this.workPlan;
-	}
-
-	public void setWorkPlan(final WorkPlan workPlan) {
-		this.workPlan = workPlan;
-	}
-
+	
 	@ManyToOne(optional = false)
 	public Warranty getWarranty() {
 		return this.warranty;
@@ -146,5 +138,23 @@ public class FixUpTask extends DomainEntity {
 	public void setCustomer(final Customer customer) {
 		this.customer = customer;
 	}
+
+	@OneToMany
+	public Collection<Phase> getPhases() {
+		return phases;
+	}
+
+	public void setPhases(Collection<Phase> phases) {
+		this.phases = phases;
+	}
+	@OneToMany(mappedBy="fixUpTask")
+	public Collection<Complaint> getComplaints() {
+		return complaints;
+	}
+
+	public void setComplaints(Collection<Complaint> complaints) {
+		this.complaints = complaints;
+	}
+	
 
 }

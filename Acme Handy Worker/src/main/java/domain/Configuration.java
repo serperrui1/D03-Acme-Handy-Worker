@@ -1,13 +1,15 @@
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
@@ -15,16 +17,16 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Configuration extends DomainEntity {
 	private Integer vat;
-	private Integer countryCode;
+	private String countryCode;
 	private Double cacheFinder;
 	private Double resultFinder;
-	private String spamWord;
+	private Collection<String> spamWord;
 	private String banner;
-	private String creditCard;
+	private Collection<String> typeCreditCard;
 	private String defaultCountryCode;
-	private String leafCategory;
-	private String positiveWords;
-	private String negativeWords;
+	private Collection<String> leafCategory;
+	private Collection<String> positiveWords;
+	private Collection<String>negativeWords;
 
 	public Integer getVat() {
 		return vat;
@@ -34,11 +36,11 @@ public class Configuration extends DomainEntity {
 		this.vat = vat;
 	}
 
-	public Integer getCountryCode() {
+	public String getCountryCode() {
 		return countryCode;
 	}
 
-	public void setCountryCode(Integer countryCode) {
+	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
 
@@ -61,11 +63,11 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getSpamWord() {
+	public Collection<String> getSpamWord() {
 		return spamWord;
 	}
 
-	public void setSpamWord(String spamWord) {
+	public void setSpamWord(Collection<String> spamWord) {
 		this.spamWord = spamWord;
 	}
 
@@ -79,14 +81,13 @@ public class Configuration extends DomainEntity {
 		this.banner = banner;
 	}
 
-	@NotBlank
-	@Column(unique = true)
-	public String getCreditCard() {
-		return creditCard;
+	@NotEmpty
+	public Collection<String> getCreditCard() {
+		return typeCreditCard;
 	}
 
-	public void setCreditCard(String creditCard) {
-		this.creditCard = creditCard;
+	public void setCreditCard(Collection<String> creditCard) {
+		this.typeCreditCard = creditCard;
 	}
 
 	@Pattern(regexp = "^[+]([1-9][0-9][0-9]|[1-9][0-9]|[1-9])$")
@@ -99,29 +100,29 @@ public class Configuration extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getLeafCategory() {
+	public Collection<String> getLeafCategory() {
 		return leafCategory;
 	}
 
-	public void setLeafCategory(String leafCategory) {
+	public void setLeafCategory(Collection<String> leafCategory) {
 		this.leafCategory = leafCategory;
 	}
 
 	@NotBlank
-	public String getPositiveWords() {
+	public Collection<String> getPositiveWords() {
 		return positiveWords;
 	}
 
-	public void setPositiveWords(String positiveWords) {
+	public void setPositiveWords(Collection<String> positiveWords) {
 		this.positiveWords = positiveWords;
 	}
 
 	@NotBlank
-	public String getNegativeWords() {
+	public Collection<String> getNegativeWords() {
 		return negativeWords;
 	}
 
-	public void setNegativeWords(String negativeWords) {
+	public void setNegativeWords(Collection<String> negativeWords) {
 		this.negativeWords = negativeWords;
 	}
 

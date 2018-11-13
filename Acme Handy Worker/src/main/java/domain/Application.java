@@ -8,6 +8,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,8 +16,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -30,7 +29,7 @@ public class Application extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -87,17 +86,17 @@ public class Application extends DomainEntity {
 
 	// Relationships
 
-	private FixUpTask	fixUpTask;
+	private Collection<FixUpTask>	fixUpTasks;
 	private HandyWorker	handyworker;
 
 
-	@OneToOne(optional = false)
-	public FixUpTask getFixUpTask() {
-		return this.fixUpTask;
+	@OneToMany(mappedBy="aplication")
+	public Collection<FixUpTask> getFixUpTask() {
+		return this.fixUpTasks;
 	}
 
-	public void setFixUpTask(final FixUpTask fixUpTask) {
-		this.fixUpTask = fixUpTask;
+	public void setFixUpTask(final Collection<FixUpTask> fixUpTasks) {
+		this.fixUpTasks = fixUpTasks;
 	}
 
 	@OneToOne(optional = false)
