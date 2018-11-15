@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Access(AccessType.PROPERTY)
 public class Finder extends DomainEntity {
@@ -45,7 +43,6 @@ public class Finder extends DomainEntity {
 	}
 
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	public Date getMinDate() {
 		return this.minDate;
 	}
@@ -54,7 +51,6 @@ public class Finder extends DomainEntity {
 	}
 
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	public Date getMaxDate() {
 		return this.maxDate;
 	}

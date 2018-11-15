@@ -20,6 +20,7 @@ public class CreditCard {
 	private Integer	expirationMonth;
 	private Integer	expirationYear;
 	private Integer	cvv;
+	private String typeCreditCard;
 
 
 	@NotBlank
@@ -41,7 +42,7 @@ public class CreditCard {
 	}
 
 	@CreditCardNumber
-	@Pattern(regexp = "/^[0-9](16}$/")
+	@Pattern(regexp = "^\\d{16}$")
 	public String getNumber() {
 		return this.number;
 	}
@@ -75,6 +76,14 @@ public class CreditCard {
 
 	public void setCvv(final Integer cvv) {
 		this.cvv = cvv;
+	}
+	@NotBlank
+	public String getTypeCreditCard() {
+		return typeCreditCard;
+	}
+
+	public void setTypeCreditCard(String typeCreditCard) {
+		this.typeCreditCard = typeCreditCard;
 	}
 
 }

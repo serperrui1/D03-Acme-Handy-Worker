@@ -36,7 +36,7 @@ public class Customer extends Endorser {
 
 	private Collection<Complaint>	complaints;
 	private Collection<FixUpTask>	fixUpTasks;
-	private Collection<Comment>		comments;
+
 
 
 	@OneToMany(mappedBy = "customer")
@@ -52,18 +52,11 @@ public class Customer extends Endorser {
 		this.complaints = complaints;
 	}
 
-	@OneToMany(mappedBy = "customer")
+	@OneToMany
 	public Collection<Complaint> getComplaints() {
 		return this.complaints;
 	}
 
-	@OneToMany(mappedBy = "customer")
-	public Collection<Comment> getComments() {
-		return this.comments;
-	}
-
-	public void setComments(final Collection<Comment> comments) {
-		this.comments = comments;
-	}
+	
 
 }

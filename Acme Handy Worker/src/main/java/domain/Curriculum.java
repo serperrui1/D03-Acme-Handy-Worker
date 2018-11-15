@@ -33,22 +33,12 @@ public class Curriculum extends DomainEntity {
 
 
 	// Relationships ----------------------------------------------------------
-	private HandyWorker						handyWorker;
 	private PersonalRecord					personalRecord;
 	private Collection<EducationRecord>		educationRecords;
 	private Collection<ProfessionalRecord>	professionalRecords;
 	private Collection<EndorserRecord>		endorserRecords;
 	private Collection<MiscellaneousRecord>	miscellaneousRecords;
 
-
-	@OneToOne(optional = false)
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
-
-	public void sethandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
 
 	@OneToOne(optional = false)
 	public PersonalRecord getPersonalRecord() {
