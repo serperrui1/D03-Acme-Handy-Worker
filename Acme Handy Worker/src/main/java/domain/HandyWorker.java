@@ -48,10 +48,9 @@ public class HandyWorker extends Endorser {
 
 	// Relationships ----------------------------------------------------------
 	private Collection<Tutorial>	tutorials;
-	private Application				application;
+	private Collection<Application>	applications;
 	private Curriculum				curriculum;
 	private Finder					finder;
-	
 
 
 	@OneToMany
@@ -63,13 +62,13 @@ public class HandyWorker extends Endorser {
 		this.tutorials = tutorial;
 	}
 
-	@OneToOne(optional = true)
-	public Application getApplication() {
-		return this.application;
+	@OneToMany(mappedBy = "handyworker")
+	public Collection<Application> getApplications() {
+		return this.applications;
 	}
 
-	public void setApplication(final Application application) {
-		this.application = application;
+	public void setApplications(final Collection<Application> applications) {
+		this.applications = applications;
 	}
 
 	@OneToOne(optional = true)

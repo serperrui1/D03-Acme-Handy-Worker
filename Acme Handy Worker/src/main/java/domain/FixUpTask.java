@@ -10,11 +10,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -94,12 +92,12 @@ public class FixUpTask extends DomainEntity {
 
 
 	// Relationships ----------------------------------------------------------
-	private Warranty	warranty;
-	private Category	category;
-	private Application	application;
-	private Customer	customer;
-	private Collection<Phase> phases;
-	private Collection<Complaint> complaints;
+	private Warranty				warranty;
+	private Category				category;
+	private Collection<Application>	applications;
+	private Customer				customer;
+	private Collection<Phase>		phases;
+	private Collection<Complaint>	complaints;
 
 
 	@ManyToOne(optional = false)
@@ -111,16 +109,15 @@ public class FixUpTask extends DomainEntity {
 		this.category = category;
 	}
 
-	@OneToOne(optional = true)
-	public Application getApplication() {
-		return this.application;
+	@OneToMany(mappedBy = "fixUpTask")
+	public Collection<Application> getApplications() {
+		return this.applications;
 	}
 
-	public void setApplication(final Application application) {
-		this.application = application;
+	public void setApplications(final Collection<Application> applications) {
+		this.applications = applications;
 	}
 
-	
 	@ManyToOne(optional = false)
 	public Warranty getWarranty() {
 		return this.warranty;
@@ -141,20 +138,19 @@ public class FixUpTask extends DomainEntity {
 
 	@OneToMany
 	public Collection<Phase> getPhases() {
-		return phases;
+		return this.phases;
 	}
 
-	public void setPhases(Collection<Phase> phases) {
+	public void setPhases(final Collection<Phase> phases) {
 		this.phases = phases;
 	}
-	@OneToMany(mappedBy="fixUpTask")
+	@OneToMany(mappedBy = "fixUpTask")
 	public Collection<Complaint> getComplaints() {
-		return complaints;
+		return this.complaints;
 	}
 
-	public void setComplaints(Collection<Complaint> complaints) {
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
 	}
-	
 
 }

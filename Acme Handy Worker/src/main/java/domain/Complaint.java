@@ -1,3 +1,4 @@
+
 package domain;
 
 import java.util.Collection;
@@ -16,16 +17,16 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Complaint extends DomainEntity {
 
-	private String ticker;
-	private Date moment;
-	private String description;
-	private Collection<String> attachments;
+	private String				ticker;
+	private Date				moment;
+	private String				description;
+	private Collection<String>	attachments;
+
 
 	@NotBlank
 	@Pattern(regexp = "^[0-9][0-9](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[A-Z0-9]{6}$")
@@ -59,16 +60,19 @@ public class Complaint extends DomainEntity {
 
 	@ElementCollection
 	public Collection<String> getAttachments() {
-		return attachments;
+		return this.attachments;
 	}
 
-	public void setAttachments(Collection<String> attachments) {
+	public void setAttachments(final Collection<String> attachments) {
 		this.attachments = attachments;
 	}
 
+
 	// Relationships ----------------------------------------------------------
-	private FixUpTask fixUpTask;
-	private Collection<Report> reports;
+	private FixUpTask			fixUpTask;
+	private Collection<Report>	reports;
+	private Customer			customer;
+
 
 	@ManyToOne(optional = false)
 	public FixUpTask getFixUpTask() {
@@ -86,5 +90,14 @@ public class Complaint extends DomainEntity {
 
 	public void setReports(final Collection<Report> Report) {
 		this.reports = Report;
+	}
+
+	@ManyToOne(optional = false)
+	public Customer getCustomer() {
+		return this.customer;
+	}
+
+	public void setCustomer(final Customer customer) {
+		this.customer = customer;
 	}
 }

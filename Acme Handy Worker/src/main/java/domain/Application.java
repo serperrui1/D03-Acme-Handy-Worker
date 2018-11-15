@@ -8,8 +8,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -28,7 +27,6 @@ public class Application extends DomainEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -55,7 +53,6 @@ public class Application extends DomainEntity {
 		this.price = price;
 	}
 
-	
 	@ElementCollection
 	public Collection<String> getComments() {
 		return this.comments;
@@ -85,20 +82,20 @@ public class Application extends DomainEntity {
 
 	// Relationships
 
-	private Collection<FixUpTask>	fixUpTasks;
+	private FixUpTask	fixUpTask;
 	private HandyWorker	handyworker;
 
 
-	@OneToMany(mappedBy="application")
-	public Collection<FixUpTask> getFixUpTask() {
-		return this.fixUpTasks;
+	@ManyToOne(optional = false)
+	public FixUpTask getFixUpTask() {
+		return this.fixUpTask;
 	}
 
-	public void setFixUpTask(final Collection<FixUpTask> fixUpTasks) {
-		this.fixUpTasks = fixUpTasks;
+	public void setFixUpTask(final FixUpTask fixUpTask) {
+		this.fixUpTask = fixUpTask;
 	}
 
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	public HandyWorker getHandyworker() {
 		return this.handyworker;
 	}

@@ -213,7 +213,11 @@
 			<list>
 			</list>
 		</property>
-		<property name="application" ref="application1" />
+		<property name="applications">
+			<list>
+			
+			</list>
+		</property>
 		<property name="curriculum" ref="curriculum1" />
 		<property name="tutorials">
 			<list>
@@ -260,6 +264,11 @@
 				<ref bean="message28" />
 			</list>
 		</property>
+		<property name="applications">
+			<list>
+			
+			</list>
+		</property>
 		<property name="curriculum" ref="curriculum2" />
 	</bean>
 
@@ -297,6 +306,11 @@
 				<ref bean="message11" />
 				<ref bean="message29" />
 				<ref bean="message36" />
+			</list>
+		</property>
+		<property name="applications">
+			<list>
+			
 			</list>
 		</property>
 	</bean>
@@ -342,12 +356,12 @@
 		</property>
 		<property name="fixUpTasks">
 			<list>
-				<ref bean="task1" />
+				
 			</list>
 		</property>
 		<property name="complaints">
 			<list>
-				<ref bean="complaint1" />
+				
 			</list>
 		</property>
 		<property name="made">
@@ -398,12 +412,12 @@
 		</property>
 		<property name="fixUpTasks">
 			<list>
-				<ref bean="task2" />
+				
 			</list>
 		</property>
 		<property name="complaints">
 			<list>
-				<ref bean="complaint2" />
+				
 			</list>
 		</property>
 		<property name="made">
@@ -453,12 +467,12 @@
 		</property>
 		<property name="fixUpTasks">
 			<list>
-				<ref bean="task3" />
+				
 			</list>
 		</property>
 		<property name="complaints">
 			<list>
-				<ref bean="complaint3" />
+				
 			</list>
 		</property>
 		<property name="made">
@@ -2085,7 +2099,7 @@
 
 	<bean class="domain.Application" id="application1">
 		<property name="moment" value="10/12/2017 12:06" />
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="price" value="55.5" />
 		<property name="comments">
 			<list>
@@ -2111,30 +2125,61 @@
 
 	<bean class="domain.Application" id="application3">
 		<property name="moment" value="34/12/2015 23:00" />
-		<property name="status" value="REJECTED" />
+		<property name="status" value="ACCEPTED" />
 		<property name="price" value="99.5" />
 		<property name="comments">
 			<list>
 				<value>"Comentario 1" </value>
 			</list>
 		</property>
-		<property name="FixUpTask" ref="task3" />
+		<property name="FixUpTask" ref="task2" />
 		<property name="handyworker" ref="handyworker3" />
 	</bean>
+	
+	<bean class="domain.Application" id="application4">
+		<property name="moment" value="34/12/2015 23:00" />
+		<property name="status" value="ACCEPTED" />
+		<property name="price" value="46.5" />
+		<property name="comments">
+			<list>
+				<value>"Comentario 1" </value>
+			</list>
+		</property>
+		<property name="FixUpTask" ref="task5" />
+		<property name="handyworker" ref="handyworker1" />
+	</bean>
+	
+	<bean class="domain.Application" id="application5">
+		<property name="moment" value="34/12/2015 23:00" />
+		<property name="status" value="REJECTED" />
+		<property name="price" value="47.5" />
+		<property name="comments">
+			<list>
+				<value>"Comentario 1" </value>
+			</list>
+		</property>
+		<property name="FixUpTask" ref="task6" />
+		<property name="handyworker" ref="handyworker1" />
+	</bean>
+	
 
 	<!-- FIX-UP TASK -->
 
 	<bean class="domain.FixUpTask" id="task1">
 		<property name="ticker" value="171211-3SD7AW" />
 		<property name="startMoment" value="10/12/2017 12:00" />
-		<property name="endMoment" value="23/12/2017 12:00" />
+		<property name="endMoment" value="12/12/2017 12:00" />
 		<property name="description" value="This is the FixUpTask 1" />
 		<property name="address" value="address1" />
 		<property name="maximumPrice" value="3000" />
 		<property name="customer" ref="customer1" />
 		<property name="warranty" ref="warranty1" />
 		<property name="category" ref="category1" />
-		<property name="application" ref="application1" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2155,7 +2200,11 @@
 		<property name="customer" ref="customer2" />
 		<property name="warranty" ref="warranty2" />
 		<property name="category" ref="category2" />
-		<property name="application" ref="application2" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2177,7 +2226,11 @@
 		<property name="customer" ref="customer3" />
 		<property name="warranty" ref="warranty3" />
 		<property name="category" ref="category3" />
-		<property name="application" ref="application3" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2199,7 +2252,11 @@
 		<property name="customer" ref="customer3" />
 		<property name="warranty" ref="warranty2" />
 		<property name="category" ref="category3" />
-		<property name="application" ref="application2" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2221,7 +2278,11 @@
 		<property name="customer" ref="customer1" />
 		<property name="warranty" ref="warranty1" />
 		<property name="category" ref="category2" />
-		<property name="application" ref="application2" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2243,7 +2304,11 @@
 		<property name="customer" ref="customer1" />
 		<property name="warranty" ref="warranty1" />
 		<property name="category" ref="category1" />
-		<property name="application" ref="application3" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2267,7 +2332,11 @@
 		<property name="customer" ref="customer3" />
 		<property name="warranty" ref="warranty3" />
 		<property name="category" ref="category2" />
-		<property name="application" ref="application2" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2291,7 +2360,11 @@
 		<property name="customer" ref="customer2" />
 		<property name="warranty" ref="warranty2" />
 		<property name="category" ref="category3" />
-		<property name="application" ref="application1" />
+		<property name="applications">
+			<list>
+				
+			</list>
+		</property>
 		<property name="complaints">
 			<list>
 			</list>
@@ -2393,6 +2466,7 @@
 				<ref bean="report2" />
 			</list>
 		</property>
+		<property name="customer" ref="customer1"/>
 	</bean>
 
 	<bean class="domain.Complaint" id="complaint2">
@@ -2410,6 +2484,7 @@
 				<ref bean="report4" />
 			</list>
 		</property>
+		<property name="customer" ref="customer2"/>
 	</bean>
 
 	<bean class="domain.Complaint" id="complaint3">
@@ -2427,6 +2502,24 @@
 				<ref bean="report6" />
 			</list>
 		</property>
+		<property name="customer" ref="customer2"/>
+	</bean>
+	
+	<bean class="domain.Complaint" id="complaint4">
+		<property name="ticker" value="111212-3SD8AX" />
+		<property name="moment" value="11/12/2017 17:00" />
+		<property name="description" value="Complaint4's description" />
+		<property name="attachments">
+			<list>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="task1" />
+		<property name="reports">
+			<list>
+				
+			</list>
+		</property>
+		<property name="customer" ref="customer3"/>
 	</bean>
 	<!-- Notes -->
 
